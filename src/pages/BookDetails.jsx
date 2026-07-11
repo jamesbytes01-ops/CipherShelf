@@ -194,7 +194,7 @@ export default function BookDetails() {
             </div>
             <div className="flex items-center gap-2">
               <RotateCcw className="w-4 h-4 text-slate-400" />
-              <span>30-Day Hassle-Free Returns</span>
+              <span>7-Day Hassle-Free Returns</span>
             </div>
           </div>
         </div>

@@ -466,8 +466,8 @@ export default function Home() {
                 <RotateCcw className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-extrabold text-slate-900 text-lg mb-2">30-Day Returns</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">Not the right book? Return any physical book in original condition within 30 days for a full refund.</p>
+                <h4 className="font-extrabold text-slate-900 text-lg mb-2">7-Day Returns</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">Not the right book? Return any physical book in original condition within 7 days for a full refund.</p>
               </div>
             </div>
           </div>
