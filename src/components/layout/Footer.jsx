@@ -34,7 +34,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-12">
         {/* Brand info */}
         <div className="lg:col-span-2 flex flex-col gap-5">
-          <Link to="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5">
+          <Link to="/" className="flex items-center gap-2.5">
             <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
               <Shield className="w-4.5 h-4.5 text-white stroke-[2]" />
             </div>
@@ -72,16 +72,16 @@ export function Footer() {
           <h3 className="font-semibold text-white text-sm tracking-wide uppercase">Company</h3>
           <ul className="flex flex-col gap-2.5 text-sm">
             <li>
-              <Link to="/about" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">About Us</Link>
+              <Link to="/about" className="hover:text-white transition-colors">About Us</Link>
             </li>
             <li>
-              <Link to="/contact" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Contact</Link>
+              <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
             </li>
             <li>
-              <Link to="/legal/careers" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Careers</Link>
+              <Link to="/legal/careers" className="hover:text-white transition-colors">Careers</Link>
             </li>
             <li>
-              <Link to="/legal/press" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Press Room</Link>
+              <Link to="/legal/press" className="hover:text-white transition-colors">Press Room</Link>
             </li>
           </ul>
         </div>
@@ -92,7 +92,7 @@ export function Footer() {
           <ul className="flex flex-col gap-2.5 text-sm">
             {categories.map((cat) => (
               <li key={cat}>
-                <Link to={`/books?category=${encodeURIComponent(cat)}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                <Link to={`/books?category=${encodeURIComponent(cat)}`} className="hover:text-white transition-colors">
                   {cat}
                 </Link>
               </li>
@@ -105,25 +105,25 @@ export function Footer() {
           <h3 className="font-semibold text-white text-sm tracking-wide uppercase">Legal</h3>
           <ul className="flex flex-col gap-2.5 text-sm">
             <li>
-              <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</Link>
+              <Link to="/legal/terms" className="hover:text-white transition-colors">Terms of Service</Link>
             </li>
             <li>
-              <Link to="/legal/eula" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">End User License Agreement (EULA)</Link>
+              <Link to="/legal/eula" className="hover:text-white transition-colors">End User License Agreement (EULA)</Link>
             </li>
             <li>
-              <Link to="/legal/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/legal/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
             </li>
             <li>
-              <Link to="/legal/cookies" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Cookies Policy</Link>
+              <Link to="/legal/cookies" className="hover:text-white transition-colors">Cookies Policy</Link>
             </li>
             <li>
-              <Link to="/legal/returns" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Return Policy</Link>
+              <Link to="/legal/returns" className="hover:text-white transition-colors">Return Policy</Link>
             </li>
             <li>
-              <Link to="/legal/security" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Security Disclosures</Link>
+              <Link to="/legal/security" className="hover:text-white transition-colors">Security Disclosures</Link>
             </li>
             <li>
-              <Link to="/legal/licenses" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Licenses &amp; Patents</Link>
+              <Link to="/legal/licenses" className="hover:text-white transition-colors">Licenses &amp; Patents</Link>
             </li>
           </ul>
         </div>
@@ -168,9 +168,9 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Links */}
             <div className="flex gap-6 w-full md:w-1/3 justify-center md:justify-start order-2 md:order-1 font-medium">
-              <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms</Link>
-              <Link to="/legal/sitemap" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sitemap</Link>
-              <Link to="/legal/security" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Security</Link>
+              <Link to="/legal/terms" className="hover:text-white transition-colors">Terms</Link>
+              <Link to="/legal/sitemap" className="hover:text-white transition-colors">Sitemap</Link>
+              <Link to="/legal/security" className="hover:text-white transition-colors">Security</Link>
             </div>
             
             {/* Copyright */}

@@ -32,7 +32,7 @@ export function BookCard({ book }) {
 
   return (
     <div className="group relative flex flex-col justify-between bg-white rounded-[20px] p-4.5 border border-slate-100 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-slate-200 hover:shadow-[0_20px_50px_-12px_rgba(15,23,42,0.12)]">
-      <Link to={`/book/${id}`} target="_blank" rel="noopener noreferrer" className="block">
+      <Link to={`/book/${id}`} className="block">
         {/* Cover Container with Badge */}
         <div className="relative w-full aspect-[2/3] overflow-hidden rounded-[14px] bg-slate-950 mb-4 shadow-sm">
           <BookCover 

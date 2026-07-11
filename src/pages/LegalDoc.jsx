@@ -285,7 +285,7 @@ export default function LegalDoc() {
                 Our support team is available 24/7 for audit ticket disclosures.
               </p>
             </div>
-            <Link to="/contact" target="_blank" rel="noopener noreferrer">
+            <Link to="/contact" >
               <Button variant="outline" size="sm" className="w-full justify-center text-xs">
                 Open Support Ticket
               </Button>

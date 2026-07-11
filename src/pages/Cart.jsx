@@ -43,7 +43,7 @@ export default function Cart() {
             You haven't added any cybersecurity literature to your shelf yet. Start exploring our collections.
           </p>
         </div>
-        <Link to="/books" target="_blank" rel="noopener noreferrer">
+        <Link to="/books" >
           <Button variant="accent" size="md">
             Browse Books
           </Button>
@@ -92,7 +92,7 @@ export default function Cart() {
                       <span className="text-[9px] uppercase font-bold tracking-widest text-accent">
                         {item.category}
                       </span>
-                      <Link to={`/book/${item.id}`} target="_blank" rel="noopener noreferrer" className="font-bold text-slate-800 hover:text-accent transition-colors text-sm leading-tight line-clamp-1">
+                      <Link to={`/book/${item.id}`} className="font-bold text-slate-800 hover:text-accent transition-colors text-sm leading-tight line-clamp-1">
                         {item.title}
                       </Link>
                       <span className="text-xs text-slate-400 truncate">{item.author}</span>

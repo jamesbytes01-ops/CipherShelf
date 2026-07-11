@@ -131,7 +131,7 @@ export function Navbar() {
           </form>
 
           {/* Cart Icon */}
-          <Link to="/cart" target="_blank" rel="noopener noreferrer" className="relative p-2 text-slate-600 hover:text-slate-900 transition-colors">
+          <Link to="/cart" className="relative p-2 text-slate-600 hover:text-slate-900 transition-colors">
             <ShoppingBag className="w-5 h-5 stroke-[1.8]" />
             {cartCount > 0 && (
               <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-accent text-[9px] font-bold text-white rounded-full flex items-center justify-center animate-fade-in shadow-sm">
@@ -150,7 +150,7 @@ export function Navbar() {
 
         {/* Mobile menu triggers */}
         <div className="flex md:hidden items-center gap-4">
-          <Link to="/cart" target="_blank" rel="noopener noreferrer" className="relative p-2 text-slate-600">
+          <Link to="/cart" className="relative p-2 text-slate-600">
             <ShoppingBag className="w-5 h-5" />
             {cartCount > 0 && (
               <span className="absolute top-1 right-1 w-3.5 h-3.5 bg-accent text-[8px] font-bold text-white rounded-full flex items-center justify-center">

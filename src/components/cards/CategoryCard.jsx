@@ -27,10 +27,7 @@ export function CategoryCard({ name, count = 0 }) {
 
   return (
     <Link 
-      to={`/books?category=${encodeURIComponent(name)}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group relative flex flex-col justify-between p-6 bg-white rounded-[24px] border border-slate-200 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-slate-300 hover:shadow-[0_20px_50px_-12px_rgba(15,23,42,0.12)] text-left overflow-hidden z-10"
+      to={`/books?category=${encodeURIComponent(name)}`} className="group relative flex flex-col justify-between p-6 bg-white rounded-[24px] border border-slate-200 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-slate-300 hover:shadow-[0_20px_50px_-12px_rgba(15,23,42,0.12)] text-left overflow-hidden z-10"
     >
       {/* Background Glow Effect on Hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-slate-100 opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />

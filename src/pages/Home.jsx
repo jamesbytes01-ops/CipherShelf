@@ -150,14 +150,14 @@ export default function Home() {
             </p>
             
             <div className="flex flex-wrap gap-4 mt-4">
-              <Link to="/books" target="_blank" rel="noopener noreferrer" className="relative group inline-block">
+              <Link to="/books" className="relative group inline-block">
                 {/* Glowing border/pulse effect behind CTA */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-amber-300 rounded-xl blur opacity-30 group-hover:opacity-70 transition duration-500 animate-pulse"></div>
                 <Button variant="accent" size="lg" className="relative px-8 py-3.5 text-sm uppercase tracking-widest font-extrabold shadow-xl">
                   Browse Books <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
-              <Link to="/categories" target="_blank" rel="noopener noreferrer">
+              <Link to="/categories" >
                 <Button variant="outline" size="lg" className="px-7 py-3 bg-white">
                   Explore Categories
                 </Button>
@@ -329,10 +329,7 @@ export default function Home() {
             {categories.map((cat, idx) => (
               <motion.div key={idx} variants={itemVariants}>
                 <Link 
-                  to={`/books?category=${encodeURIComponent(cat.name)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[24px] shadow-2xl hover:shadow-[0_0_40px_-10px_rgba(181,138,84,0.3)] hover:-translate-y-2 hover:border-accent/40 hover:bg-white/10 transition-all duration-500 ease-out relative overflow-hidden"
+                  to={`/books?category=${encodeURIComponent(cat.name)}`} className="group flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[24px] shadow-2xl hover:shadow-[0_0_40px_-10px_rgba(181,138,84,0.3)] hover:-translate-y-2 hover:border-accent/40 hover:bg-white/10 transition-all duration-500 ease-out relative overflow-hidden"
                 >
                   {/* Hover gradient shine effect */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-accent/0 via-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -354,7 +351,7 @@ export default function Home() {
             ))}
           </motion.div>
 
-          <Link to="/categories" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 bg-accent/10 border border-accent/30 text-accent hover:bg-accent hover:text-slate-950 text-[11px] font-extrabold tracking-[0.2em] uppercase rounded-full transition-all duration-500 hover:shadow-[0_0_30px_0px_rgba(181,138,84,0.4)] hover:-translate-y-1">
+          <Link to="/categories" className="inline-flex items-center justify-center px-10 py-4 bg-accent/10 border border-accent/30 text-accent hover:bg-accent hover:text-slate-950 text-[11px] font-extrabold tracking-[0.2em] uppercase rounded-full transition-all duration-500 hover:shadow-[0_0_30px_0px_rgba(181,138,84,0.4)] hover:-translate-y-1">
             Explore All Intelligence
           </Link>
         </div>
@@ -370,7 +367,7 @@ export default function Home() {
                 Best selling and top rated books by our readers
               </p>
             </div>
-            <Link to="/books" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-slate-900 transition-colors uppercase tracking-wider">
+            <Link to="/books" className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-slate-900 transition-colors uppercase tracking-wider">
               View All Books <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -417,7 +414,7 @@ export default function Home() {
                 Equip your operations desk with the industry's most trusted malware guides, red team field manuals, and defensive playbooks. Applied automatically at secure checkout.
               </p>
               
-              <Link to="/books" target="_blank" rel="noopener noreferrer" className="mt-2">
+              <Link to="/books" className="mt-2">
                 <Button variant="accent" size="md" className="px-7 py-3 font-bold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 hover:scale-[1.02]">
                   Explore Curated Library
                 </Button>
