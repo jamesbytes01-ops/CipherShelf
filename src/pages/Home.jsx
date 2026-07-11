@@ -193,57 +193,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. THE ENGINEER'S ADVANTAGE (Value Prop moved up for Google Ads) */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">The Engineer's Advantage</h2>
-            <p className="text-slate-500 mt-3 text-sm leading-relaxed font-medium">Why thousands of security professionals choose CipherShelf for their continued education.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600">
-                <ShieldCheck className="w-5 h-5" />
+      {/* 2. SLEEK HORIZONTAL TRUST BAR */}
+      <section className="py-6 border-b border-slate-200 bg-white relative z-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            
+            {/* Item 1 */}
+            <div className="flex items-center gap-4 w-full md:w-1/4 md:justify-center pt-4 md:pt-0 first:pt-0">
+              <div className="w-10 h-10 rounded-xl border border-accent/40 flex items-center justify-center text-accent bg-white shadow-sm flex-shrink-0">
+                <BookOpen className="w-5 h-5 stroke-[1.5]" />
               </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Curated Selection</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">Hand-picked and reviewed by active security researchers.</p>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Wide Range</span>
+                <span className="text-[11px] font-medium text-slate-500">of Books</span>
               </div>
             </div>
 
-            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
-                <Sparkles className="w-5 h-5" />
+            {/* Item 2 */}
+            <div className="flex items-center gap-4 w-full md:w-1/4 md:justify-center pt-4 md:pt-0 md:pl-4">
+              <div className="w-10 h-10 rounded-xl border border-accent/40 flex items-center justify-center text-accent bg-white shadow-sm flex-shrink-0">
+                <Sparkles className="w-5 h-5 stroke-[1.5]" />
               </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Instant Digital</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">Get DRM-free PDF & EPUB versions instantly upon purchase.</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
-                <Truck className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Secure Shipping</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">Packed with extreme care and shipped globally with tracking.</p>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Affordable</span>
+                <span className="text-[11px] font-medium text-slate-500">Prices</span>
               </div>
             </div>
 
-            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
-                <RotateCcw className="w-5 h-5" />
+            {/* Item 3 */}
+            <div className="flex items-center gap-4 w-full md:w-1/4 md:justify-center pt-4 md:pt-0 md:pl-4">
+              <div className="w-10 h-10 rounded-xl border border-accent/40 flex items-center justify-center text-accent bg-white shadow-sm flex-shrink-0">
+                <Truck className="w-5 h-5 stroke-[1.5]" />
               </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">7-Day Returns</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">Return any physical book in original condition for a full refund.</p>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Fast & Safe</span>
+                <span className="text-[11px] font-medium text-slate-500">Delivery</span>
               </div>
             </div>
+
+            {/* Item 4 */}
+            <div className="flex items-center gap-4 w-full md:w-1/4 md:justify-center pt-4 md:pt-0 md:pl-4">
+              <div className="w-10 h-10 rounded-xl border border-accent/40 flex items-center justify-center text-accent bg-white shadow-sm flex-shrink-0">
+                <RotateCcw className="w-5 h-5 stroke-[1.5]" />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Easy Returns</span>
+                <span className="text-[11px] font-medium text-slate-500">Policy</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
