@@ -15,10 +15,10 @@ export function Button({
   const baseStyle = 'inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]';
   
   const variants = {
-    primary: 'bg-slate-900 text-white hover:bg-slate-800 shadow-sm border border-slate-900',
-    accent: 'bg-accent text-white hover:bg-accent-hover shadow-sm border border-accent',
-    secondary: 'bg-slate-100 text-slate-900 hover:bg-slate-200 border border-transparent',
-    outline: 'bg-white text-slate-800 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 shadow-sm',
+    primary: 'bg-slate-900 text-white hover:bg-slate-800 border border-slate-900 hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-6px_rgba(15,23,42,0.4)]',
+    accent: 'bg-accent text-white hover:bg-accent-hover border border-accent hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-6px_rgba(181,138,84,0.4)]',
+    secondary: 'bg-slate-100 text-slate-900 hover:bg-slate-200 border border-transparent hover:-translate-y-0.5',
+    outline: 'bg-white text-slate-800 border border-slate-200 hover:bg-slate-50 hover:border-slate-300 hover:shadow-sm hover:-translate-y-0.5',
     ghost: 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/50'
   };
 

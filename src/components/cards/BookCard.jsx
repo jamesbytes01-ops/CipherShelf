@@ -31,10 +31,10 @@ export function BookCard({ book }) {
   }
 
   return (
-    <div className="group relative flex flex-col justify-between bg-white rounded-[20px] p-4.5 border border-slate-100 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-card-hover shadow-card">
+    <div className="group relative flex flex-col justify-between bg-white rounded-[20px] p-4.5 border border-slate-100 transition-all duration-500 ease-out hover:-translate-y-2 hover:border-slate-200 hover:shadow-[0_20px_50px_-12px_rgba(15,23,42,0.12)]">
       <Link to={`/book/${id}`} target="_blank" rel="noopener noreferrer" className="block">
         {/* Cover Container with Badge */}
-        <div className="relative w-full aspect-[2/3] overflow-hidden rounded-[14px] bg-slate-950 mb-4">
+        <div className="relative w-full aspect-[2/3] overflow-hidden rounded-[14px] bg-slate-950 mb-4 shadow-sm">
           <BookCover 
             title={title} 
             author={author} 
@@ -44,12 +44,12 @@ export function BookCard({ book }) {
             coverId={book.coverId}
             image={book.image}
             size="md"
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
           />
           
           {/* Badge Overlay */}
           {badge && (
-            <span className="absolute top-3 left-3 z-20 text-[9px] font-bold text-white px-2.5 py-1 rounded-md bg-accent shadow-sm uppercase tracking-wide">
+            <span className="absolute top-3 left-3 z-20 text-[9px] font-bold text-white px-2.5 py-1 rounded-md bg-accent shadow-[0_2px_10px_rgba(181,138,84,0.4)] uppercase tracking-wide">
               {badge}
             </span>
           )}
@@ -57,7 +57,7 @@ export function BookCard({ book }) {
 
         {/* Metadata */}
         <div className="flex flex-col gap-1 px-0.5 text-left">
-          <h3 className="font-bold text-slate-800 text-sm md:text-[15px] leading-snug group-hover:text-accent transition-colors line-clamp-2 min-h-[2.5rem]">
+          <h3 className="font-bold text-slate-800 text-sm md:text-[15px] leading-snug group-hover:text-accent transition-colors duration-300 line-clamp-2 min-h-[2.5rem]">
             {title}
           </h3>
           <p className="text-xs text-slate-400 font-medium truncate">
@@ -98,10 +98,10 @@ export function BookCard({ book }) {
 
         <button 
           onClick={handleQuickAdd} 
-          className={`flex items-center justify-center p-2.5 rounded-xl border transition-all duration-200 ${
+          className={`flex items-center justify-center p-2.5 rounded-xl border transition-all duration-300 ease-out ${
             isAdded
               ? 'bg-emerald-50 border-emerald-200 text-emerald-600'
-              : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-900 hover:text-white hover:border-slate-900 active:scale-95'
+              : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-900 hover:text-white hover:border-slate-900 hover:shadow-[0_5px_15px_-3px_rgba(15,23,42,0.4)] hover:-translate-y-0.5 active:scale-95'
           }`}
           aria-label={`Add ${title} to cart`}
         >

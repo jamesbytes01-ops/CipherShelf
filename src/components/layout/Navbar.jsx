@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate, useLocation } from 'react-router-dom';
-import { ShoppingBag, Search, Menu, X, Shield, User } from 'lucide-react';
+import { ShoppingBag, Search, Menu, X, Shield, User, ChevronDown } from 'lucide-react';
 import { useCart } from '../../context/CartContext';
 import { Button } from '../ui/Button';
 
@@ -39,24 +39,26 @@ export function Navbar() {
   };
 
   const navLinks = [
-    { to: '/', label: 'Home' },
     { to: '/books', label: 'Books' },
-    { to: '/categories', label: 'Categories' },
-    { to: '/about', label: 'About Us' },
-    { to: '/contact', label: 'Contact' }
+    { to: '/categories', label: 'Categories' }
   ];
+
+  const resources = [
+    { to: '/blog', label: 'Blog' },
+    { to: '/resources/faq', label: 'FAQ' }
+  ];
+
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-white transition-all duration-300 ${
+      className={`sticky top-0 z-[100] w-full transition-all duration-300 ${
         isScrolled 
-          ? 'shadow-[0_2px_15px_-3px_rgba(15,23,42,0.05),0_10px_20px_-15px_rgba(15,23,42,0.03)] border-b border-slate-100 py-3' 
-          : 'border-b border-slate-100 py-5'
+          ? 'bg-white/70 backdrop-blur-2xl shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-slate-200/50 py-3' 
+          : 'bg-white/80 backdrop-blur-xl border-b border-slate-100 py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo left */}
-        <Link to="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5 group">
           <div className="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center transition-transform group-hover:scale-105 duration-300">
             <Shield className="w-5 h-5 text-white stroke-[2]" />
           </div>
@@ -71,8 +73,6 @@ export function Navbar() {
             <NavLink
               key={link.to}
               to={link.to}
-              target="_blank"
-              rel="noopener noreferrer"
               className={({ isActive }) =>
                 `text-sm font-medium transition-colors hover:text-slate-900 relative py-1 ${
                   isActive 
@@ -84,6 +84,34 @@ export function Navbar() {
               {link.label}
             </NavLink>
           ))}
+          
+          {/* Resources Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setIsResourcesOpen(true)}
+            onMouseLeave={() => setIsResourcesOpen(false)}
+          >
+            <button className={`text-sm font-medium transition-colors hover:text-slate-900 relative py-1 flex items-center gap-1 ${location.pathname.startsWith('/blog') || location.pathname.startsWith('/resources') ? 'text-slate-900 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-slate-900 after:rounded-full' : 'text-slate-500'}`}>
+              Resources <ChevronDown className="w-3.5 h-3.5" />
+            </button>
+            
+            {isResourcesOpen && (
+              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 w-56 animate-fade-in z-50">
+                <div className="bg-white rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.1)] border border-slate-100 p-2 flex flex-col">
+                  {resources.map((link) => (
+                    <Link
+                      key={link.to}
+                      to={link.to}
+                      className="px-4 py-2.5 text-sm text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg transition-colors font-medium text-left"
+                      onClick={() => setIsResourcesOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Action icons right - Desktop */}
@@ -163,14 +191,25 @@ export function Navbar() {
                 <Link
                   key={link.to}
                   to={link.to}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="text-base font-semibold text-slate-700 hover:text-slate-900 py-1"
                 >
                   {link.label}
                 </Link>
               ))}
+              <div className="pt-2 border-t border-slate-100 flex flex-col gap-3">
+                <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Resources</span>
+                {resources.map((link) => (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-sm font-semibold text-slate-600 hover:text-slate-900 py-1 pl-2"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </nav>
 
             <div className="border-t border-slate-100 pt-4 flex flex-col gap-3">

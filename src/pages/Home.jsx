@@ -126,9 +126,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Left Text */}
           <div className="lg:col-span-6 flex flex-col items-start text-left gap-5">
-            {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-50 border border-slate-200/60 text-[9px] text-accent font-extrabold uppercase tracking-widest">
-              Learn. Secure. Grow.
+            {/* Trust Badge */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 shadow-sm">
+              <div className="flex gap-0.5 text-amber-500">
+                <Star className="w-3.5 h-3.5 fill-current" />
+                <Star className="w-3.5 h-3.5 fill-current" />
+                <Star className="w-3.5 h-3.5 fill-current" />
+                <Star className="w-3.5 h-3.5 fill-current" />
+                <Star className="w-3.5 h-3.5 fill-current" />
+              </div>
+              <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider">
+                Excellent 4.9/5 from <span className="text-slate-900">2,000+ Engineers</span>
+              </span>
             </div>
 
             <h1 className="text-3xl md:text-4xl lg:text-[46px] font-extrabold tracking-tight text-slate-900 leading-[1.18] max-w-xl">
@@ -140,10 +149,12 @@ export default function Home() {
               Explore masterclasses on ethical hacking, penetration testing, network security, cryptography, and reverse engineering.
             </p>
             
-            <div className="flex flex-wrap gap-4 mt-2">
-              <Link to="/books" target="_blank" rel="noopener noreferrer">
-                <Button variant="accent" size="lg" className="px-7 py-3">
-                  Browse Books
+            <div className="flex flex-wrap gap-4 mt-4">
+              <Link to="/books" target="_blank" rel="noopener noreferrer" className="relative group inline-block">
+                {/* Glowing border/pulse effect behind CTA */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-amber-300 rounded-xl blur opacity-30 group-hover:opacity-70 transition duration-500 animate-pulse"></div>
+                <Button variant="accent" size="lg" className="relative px-8 py-3.5 text-sm uppercase tracking-widest font-extrabold shadow-xl">
+                  Browse Books <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/categories" target="_blank" rel="noopener noreferrer">
@@ -182,47 +193,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. HORIZONTAL FEATURES BAR */}
-      <section className="py-6 border-y border-slate-100 bg-slate-50/65">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center">
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <div className="text-accent p-1 bg-white border border-slate-100 rounded-lg shadow-sm">
-                <BookOpen className="w-4 h-4 stroke-[2]" />
+      {/* 2. THE ENGINEER'S ADVANTAGE (Value Prop moved up for Google Ads) */}
+      <section className="py-20 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">The Engineer's Advantage</h2>
+            <p className="text-slate-500 mt-3 text-sm leading-relaxed font-medium">Why thousands of security professionals choose CipherShelf for their continued education.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600">
+                <ShieldCheck className="w-5 h-5" />
               </div>
-              <div className="text-left">
-                <h4 className="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide">Wide Range</h4>
-                <p className="text-[10px] text-slate-400 font-medium">of Books</p>
-              </div>
-            </div>
-            
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <div className="text-accent p-1 bg-white border border-slate-100 rounded-lg shadow-sm">
-                <Sparkles className="w-4 h-4 stroke-[2]" />
-              </div>
-              <div className="text-left">
-                <h4 className="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide">Affordable</h4>
-                <p className="text-[10px] text-slate-400 font-medium">Prices</p>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Curated Selection</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">Hand-picked and reviewed by active security researchers.</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <div className="text-accent p-1 bg-white border border-slate-100 rounded-lg shadow-sm">
-                <Truck className="w-4 h-4 stroke-[2]" />
+            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
+                <Sparkles className="w-5 h-5" />
               </div>
-              <div className="text-left">
-                <h4 className="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide">Fast &amp; Safe</h4>
-                <p className="text-[10px] text-slate-400 font-medium">Delivery</p>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Instant Digital</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">Get DRM-free PDF & EPUB versions instantly upon purchase.</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 justify-center md:justify-start">
-              <div className="text-accent p-1 bg-white border border-slate-100 rounded-lg shadow-sm">
-                <RotateCcw className="w-4 h-4 stroke-[2]" />
+            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                <Truck className="w-5 h-5" />
               </div>
-              <div className="text-left">
-                <h4 className="text-[11px] font-extrabold text-slate-800 uppercase tracking-wide">Easy Returns</h4>
-                <p className="text-[10px] text-slate-400 font-medium">Policy</p>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Secure Shipping</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">Packed with extreme care and shipped globally with tracking.</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
+                <RotateCcw className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">7-Day Returns</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">Return any physical book in original condition for a full refund.</p>
               </div>
             </div>
           </div>
@@ -414,65 +433,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. WHY CHOOSE CIPHERSHELF */}
-      <section className="py-24 bg-slate-50 border-t border-slate-200 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">The Engineer's Advantage</h2>
-            <p className="text-slate-500 mt-4 text-sm leading-relaxed">Why thousands of security professionals, from junior pentesters to CISOs, choose CipherShelf for their continued education.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-            {/* Card 1 */}
-            <div className="bg-white p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-slate-200/40 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-lg mb-2">Curated Selection</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">No filler. Every book on our shelf is hand-picked and reviewed by active security researchers.</p>
-              </div>
-            </div>
-
-            {/* Card 2 */}
-            <div className="bg-white p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-slate-200/40 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600">
-                <Sparkles className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-lg mb-2">Instant Digital</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">Need it now? Get DRM-free PDF & EPUB versions instantly upon purchase for immediate study.</p>
-              </div>
-            </div>
-
-            {/* Card 3 */}
-            <div className="bg-white p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-slate-200/40 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
-                <Truck className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-lg mb-2">Secure Shipping</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">Physical copies are packed with extreme care and shipped globally with tracking and insurance.</p>
-              </div>
-            </div>
-
-            {/* Card 4 */}
-            <div className="bg-white p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-slate-200/40 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600">
-                <RotateCcw className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-lg mb-2">7-Day Returns</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">Not the right book? Return any physical book in original condition within 7 days for a full refund.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* (Old Advantage Section Removed) */}
 
 
       {/* 8. NEWSLETTER / STAY UPDATED */}

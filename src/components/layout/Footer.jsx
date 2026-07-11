@@ -27,7 +27,9 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0E243F] border-t border-slate-800 text-slate-400 mt-auto">
+    <footer className="bg-[#0E243F] border-t-2 border-transparent [border-image:linear-gradient(to_right,transparent,#B58A54,transparent)_1] text-slate-400 mt-auto relative">
+      {/* Soft ambient glow on top of footer */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent shadow-[0_0_20px_rgba(181,138,84,0.5)]"></div>
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-12">
         {/* Brand info */}
@@ -106,7 +108,13 @@ export function Footer() {
               <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</Link>
             </li>
             <li>
+              <Link to="/legal/eula" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">End User License Agreement (EULA)</Link>
+            </li>
+            <li>
               <Link to="/legal/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy Policy</Link>
+            </li>
+            <li>
+              <Link to="/legal/cookies" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Cookies Policy</Link>
             </li>
             <li>
               <Link to="/legal/returns" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Return Policy</Link>
@@ -154,13 +162,28 @@ export function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-white/5 py-8 bg-black/20">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <span>&copy; {new Date().getFullYear()} CyberShelf. All rights reserved.</span>
-          <div className="flex gap-6">
-            <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</Link>
-            <Link to="/legal/sitemap" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sitemap</Link>
-            <Link to="/legal/security" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Security Disclosures</Link>
+      <div className="border-t border-white/10 py-8 bg-black/20">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col gap-6 text-sm text-slate-300">
+          
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            {/* Links */}
+            <div className="flex gap-6 w-full md:w-1/3 justify-center md:justify-start order-2 md:order-1 font-medium">
+              <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms</Link>
+              <Link to="/legal/sitemap" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sitemap</Link>
+              <Link to="/legal/security" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Security</Link>
+            </div>
+            
+            {/* Copyright */}
+            <div className="w-full md:w-1/3 text-center order-1 md:order-2 text-slate-200 font-semibold tracking-wide">
+              &copy; {new Date().getFullYear()} CyberShelf. All rights reserved.
+            </div>
+
+            <div className="w-full md:w-1/3 order-3 hidden md:block"></div>
+          </div>
+
+          {/* Disclaimer */}
+          <div className="text-xs text-slate-400 text-center max-w-4xl mx-auto leading-relaxed">
+            CyberShelf is an independent online bookstore and educational platform. We are not affiliated with, endorsed by, sponsored by, or officially connected with Microsoft, McAfee, Webroot, Norton, Bitdefender, Kaspersky, Cisco, Palo Alto Networks, CrowdStrike, Cloudflare, Google, or any other third-party organization. All trademarks, logos, product names, and company names belong to their respective owners.
           </div>
         </div>
       </div>

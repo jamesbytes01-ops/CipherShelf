@@ -219,6 +219,23 @@ export default function BookDetails() {
           </div>
         </div>
       )}
+
+      {/* MOBILE STICKY ADD TO CART BAR */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-xl border-t border-slate-200/50 shadow-[0_-10px_40px_rgba(0,0,0,0.05)] z-40 flex items-center gap-4">
+        <div className="flex-1 flex flex-col">
+          <span className="text-sm font-extrabold text-slate-950">${price.toFixed(2)}</span>
+          <span className="text-[10px] text-slate-500 font-semibold truncate">{title}</span>
+        </div>
+        <Button 
+          variant="primary" 
+          size="md" 
+          className="flex-shrink-0 px-6 shadow-lg shadow-slate-900/20"
+          icon={<ShoppingBag className="w-4 h-4" />}
+          onClick={handleAddToCart}
+        >
+          Add To Cart
+        </Button>
+      </div>
     </div>
   );
 }

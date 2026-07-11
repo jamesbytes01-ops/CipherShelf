@@ -284,14 +284,16 @@ export default function Books() {
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center py-20 px-6 border border-dashed border-slate-200 rounded-[20px] text-center">
-              <span className="text-3xl mb-3">🔍</span>
-              <h3 className="font-bold text-slate-800 text-base">No books match your criteria</h3>
-              <p className="text-xs text-slate-500 max-w-xs mt-1.5 leading-relaxed">
-                Try widening your search keywords or resetting specific filters to browse the entire collection.
+            <div className="flex flex-col items-center justify-center py-24 px-6 border-2 border-dashed border-slate-200 bg-slate-50/50 rounded-[24px] text-center">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm border border-slate-100 mb-5 text-slate-400">
+                <Search className="w-8 h-8" />
+              </div>
+              <h3 className="font-extrabold text-slate-900 text-lg">No intelligence matches criteria</h3>
+              <p className="text-xs text-slate-500 max-w-sm mt-2 leading-relaxed">
+                We couldn't find any manuals matching your exact filters. Try widening your search keywords or resetting specific filters to browse the entire collection.
               </p>
-              <Button variant="outline" size="sm" className="mt-5" onClick={handleResetFilters}>
-                Reset All Filters
+              <Button variant="outline" size="md" className="mt-6" onClick={handleResetFilters}>
+                <RotateCcw className="w-4 h-4 mr-2" /> Reset All Filters
               </Button>
             </div>
           )}

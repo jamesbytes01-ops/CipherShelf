@@ -14,6 +14,8 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Cart = lazy(() => import('./pages/Cart'));
 const LegalDoc = lazy(() => import('./pages/LegalDoc'));
 const SignIn = lazy(() => import('./pages/SignIn'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 
 // Loading fallback component
 function PageLoader() {
@@ -49,6 +51,8 @@ export default function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/legal/:docKey" element={<LegalDoc />} />
                 <Route path="/signin" element={<SignIn />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogArticle />} />
                 
                 {/* Fallback route */}
                 <Route path="*" element={

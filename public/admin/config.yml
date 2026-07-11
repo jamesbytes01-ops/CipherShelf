@@ -1,0 +1,80 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "public/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Category", name: "category", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Reading Time (mins)", name: "reading_time", widget: "number"}
+      - {label: "Short Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "homepage"
+    label: "Homepage Settings"
+    files:
+      - label: "Hero Section"
+        name: "hero"
+        file: "public/content/homepage/hero.json"
+        fields:
+          - {label: "Hero Title", name: "title", widget: "string"}
+          - {label: "Hero Subtitle", name: "subtitle", widget: "text"}
+          - {
+              label: "Hero Buttons", 
+              name: "buttons", 
+              widget: "list", 
+              fields: [
+                {label: "Label", name: "label", widget: "string"},
+                {label: "Link", name: "link", widget: "string"},
+                {label: "Variant", name: "variant", widget: "select", options: ["primary", "accent", "outline"]}
+              ]
+            }
+      - label: "Featured Books"
+        name: "featured_books"
+        file: "public/content/homepage/featured_books.json"
+        fields:
+          - {label: "Section Title", name: "title", widget: "string"}
+          - {label: "Section Subtitle", name: "subtitle", widget: "text"}
+      - label: "Featured Categories"
+        name: "featured_categories"
+        file: "public/content/homepage/featured_categories.json"
+        fields:
+          - {label: "Section Title", name: "title", widget: "string"}
+          - {label: "Section Subtitle", name: "subtitle", widget: "text"}
+
+  - name: "footer"
+    label: "Footer Settings"
+    files:
+      - label: "Footer Content"
+        name: "footer_content"
+        file: "public/content/footer/content.json"
+        fields:
+          - {label: "Newsletter Heading", name: "newsletter_title", widget: "string"}
+          - {label: "Newsletter Text", name: "newsletter_text", widget: "text"}
+          - {
+              label: "Links Columns", 
+              name: "columns", 
+              widget: "list", 
+              fields: [
+                {label: "Column Title", name: "title", widget: "string"},
+                {
+                  label: "Links", 
+                  name: "links", 
+                  widget: "list", 
+                  fields: [
+                    {label: "Label", name: "label", widget: "string"},
+                    {label: "URL", name: "url", widget: "string"}
+                  ]
+                }
+              ]
+            }

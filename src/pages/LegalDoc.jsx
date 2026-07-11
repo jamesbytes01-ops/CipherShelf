@@ -150,6 +150,38 @@ const DOCS = {
 
     - Shopping Cart: /cart
       Shopping shelf list, subtotal calculations, and secure mock checkout gateways.`
+  },
+  eula: {
+    title: "End User License Agreement (EULA)",
+    icon: <Scale className="w-8 h-8 text-accent" />,
+    lastUpdated: "July 11, 2026",
+    signee: "Legal & Compliance",
+    content: `This End User License Agreement ("Agreement") is a legal agreement between you and CyberShelf for the use of our digital resources.
+
+    1. License Grant
+    CyberShelf grants you a non-exclusive, non-transferable, limited license to access and use the digital educational materials exclusively for personal, non-commercial, and defensive cybersecurity research purposes.
+
+    2. Restrictions
+    You agree not to reproduce, distribute, or reverse-engineer any proprietary materials, DRM-free EPUBs, or code examples provided within the digital storefront without explicit written consent.
+
+    3. Termination
+    This license is effective until terminated. Your rights under this license will terminate automatically without notice if you fail to comply with any of its terms.`
+  },
+  cookies: {
+    title: "Cookies Policy",
+    icon: <Shield className="w-8 h-8 text-accent" />,
+    lastUpdated: "July 11, 2026",
+    signee: "Data Security Officer",
+    content: `CyberShelf believes in a privacy-first approach. We minimize the use of cookies and local tracking mechanisms across our platform.
+
+    1. Essential Cookies
+    We use strictly necessary browser storage (such as localStorage and sessionStorage) to maintain your shopping cart state, authentication session, and display preferences. These do not track you across other websites.
+
+    2. Analytics and Tracking
+    CyberShelf does not deploy third-party advertising cookies, cross-site trackers, or hidden analytics pixels. Your reading preferences and searches remain local to your device.
+
+    3. Managing Preferences
+    You can clear your local cache or disable cookies entirely through your browser settings, though doing so will clear your shopping cart inventory.`
   }
 };
 
