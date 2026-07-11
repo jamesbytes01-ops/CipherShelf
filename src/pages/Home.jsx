@@ -6,7 +6,8 @@ import {
   Flame, Network, Terminal, Key, Cpu, Search, Star, Sparkles, Mail,
   ChevronRight, TerminalSquare
 } from 'lucide-react';
-import booksData from '../data/books.json';
+import booksRaw from '../data/books.json';
+const booksData = booksRaw.books;
 import { BookCard } from '../components/cards/BookCard';
 import { Button } from '../components/ui/Button';
 import { HeroIllustration } from '../components/layout/HeroIllustration';

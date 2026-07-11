@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
-import booksData from '../data/books.json';
+import booksRaw from '../data/books.json';
+const booksData = booksRaw.books;
 import { CategoryCard } from '../components/cards/CategoryCard';
 
 const ALL_CATEGORIES = [
