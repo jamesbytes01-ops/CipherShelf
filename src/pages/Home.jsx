@@ -6,13 +6,14 @@ import {
   Flame, Network, Terminal, Key, Cpu, Search, Star, Sparkles, Mail,
   ChevronRight, TerminalSquare
 } from 'lucide-react';
-import booksRaw from '../data/books.json';
-const booksData = booksRaw.books;
+const bookModules = import.meta.glob('../data/books/*.json', { eager: true });
+const booksData = Object.values(bookModules).map(mod => mod.default || mod);
 import { BookCard } from '../components/cards/BookCard';
 import { Button } from '../components/ui/Button';
 import { HeroIllustration } from '../components/layout/HeroIllustration';
 import { BookCover } from '../utils/svgGenerator';
 import promoRealBooksImage from '../assets/promo-real-books.png';
+import heroEditorialImage from '../assets/hero-editorial.png';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -166,9 +167,16 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Mug Stack Illustration */}
-          <div className="lg:col-span-6 w-full flex justify-center">
-            <HeroIllustration />
+          {/* Right Editorial Image */}
+          <div className="lg:col-span-6 w-full flex justify-center relative z-20">
+            <div className="relative w-full max-w-[500px] hover:scale-[1.02] transition-transform duration-700 ease-out">
+              <div className="absolute inset-0 bg-accent/10 rounded-[40px] blur-[80px] -z-10" />
+              <img 
+                src={heroEditorialImage} 
+                alt="CyberShelf Premium Book Stack" 
+                className="w-full h-auto object-contain drop-shadow-2xl"
+              />
+            </div>
           </div>
         </div>
       </section>

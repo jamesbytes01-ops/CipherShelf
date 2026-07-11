@@ -1,0 +1,18 @@
+{
+  "id": "black-hat-python",
+  "title": "Black Hat Python",
+  "author": "Justin Seitz",
+  "category": "Python",
+  "rating": 4.8,
+  "price": 39.99,
+  "description": "Discover the darker side of Python programming. Learn how to write network sniffers, manipulate packets, infect virtual machines, and create stealthy trojans using Python 3.",
+  "isbn": "978-1-7185-0104-1",
+  "pages": 216,
+  "language": "English",
+  "publisher": "No Starch Press",
+  "publishedYear": 2021,
+  "bestseller": true,
+  "featured": true,
+  "coverColor": "emerald",
+  "coverId": 8513526
+}

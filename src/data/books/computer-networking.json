@@ -1,0 +1,18 @@
+{
+  "id": "computer-networking",
+  "title": "Computer Networking: A Top-Down Approach",
+  "author": "James Kurose & Keith Ross",
+  "category": "Networking",
+  "rating": 4.8,
+  "price": 84.99,
+  "description": "The gold standard text on computer networking. Learn how layers interface, protocols negotiate, routers forward packets, and local area networks handle concurrency.",
+  "isbn": "978-0-13-359414-0",
+  "pages": 864,
+  "language": "English",
+  "publisher": "Pearson",
+  "publishedYear": 2020,
+  "bestseller": true,
+  "featured": false,
+  "coverColor": "indigo",
+  "coverId": 11487140
+}

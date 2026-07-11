@@ -1,0 +1,18 @@
+{
+  "id": "social-engineering-art",
+  "title": "Social Engineering: The Science of Human Hacking",
+  "author": "Christopher Hadnagy",
+  "category": "OSINT",
+  "rating": 4.6,
+  "price": 26.99,
+  "description": "Explore the psychological methods hackers use to manipulate human targets. Learn how to identify influence tactics, defend against social engineering, and run security training audits.",
+  "isbn": "978-1-119-47950-5",
+  "pages": 320,
+  "language": "English",
+  "publisher": "Wiley",
+  "publishedYear": 2018,
+  "bestseller": true,
+  "featured": false,
+  "coverColor": "orange",
+  "image": "/src/assets/social-engineering.jpg"
+}

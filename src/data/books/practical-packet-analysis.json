@@ -1,0 +1,18 @@
+{
+  "id": "practical-packet-analysis",
+  "title": "Practical Packet Analysis",
+  "author": "Chris Sanders",
+  "category": "Networking",
+  "rating": 4.7,
+  "price": 34.99,
+  "description": "Learn to use Wireshark to solve real-world network problems. Master traffic capture, packet filtering, network diagnostics, protocol dissection, and performance bottleneck debugging.",
+  "isbn": "978-1-59327-802-1",
+  "pages": 368,
+  "language": "English",
+  "publisher": "No Starch Press",
+  "publishedYear": 2017,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "sky",
+  "coverId": 1984290
+}

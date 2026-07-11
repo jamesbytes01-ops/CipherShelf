@@ -1,0 +1,18 @@
+{
+  "id": "cissp-study-guide",
+  "title": "CISSP Official Study Guide",
+  "author": "Mike Chapple, James Stewart, Darril Gibson",
+  "category": "SOC",
+  "rating": 4.9,
+  "price": 69.99,
+  "description": "The industry standard study guide for the CISSP exam. Covers security architecture, asset security, communication, operations, risk management, and identity provisioning.",
+  "isbn": "978-1-119-78623-8",
+  "pages": 1056,
+  "language": "English",
+  "publisher": "Sybex",
+  "publishedYear": 2021,
+  "bestseller": true,
+  "featured": true,
+  "coverColor": "slate",
+  "coverId": 13253986
+}

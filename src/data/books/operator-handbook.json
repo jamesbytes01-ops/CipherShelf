@@ -1,0 +1,17 @@
+{
+  "id": "operator-handbook",
+  "title": "Operator Handbook: Red Team + Blue Team Reference",
+  "author": "Joshua L. Pruitt",
+  "category": "Red Team",
+  "rating": 4.9,
+  "price": 18,
+  "description": "An exhaustive command sheet designed for both attackers and defenders. Lists commands, configuration tools, script templates, and quick guides for common penetration tools.",
+  "isbn": "979-8-6161-0021-4",
+  "pages": 194,
+  "language": "English",
+  "publisher": "Pragmatic Bookshelf",
+  "publishedYear": 2020,
+  "bestseller": true,
+  "featured": true,
+  "coverColor": "darkgray"
+}

@@ -1,0 +1,110 @@
+/* CyberShelf Custom CMS Theme */
+
+:root {
+  --bg-dark: #0f172a; /* slate-950 */
+  --bg-card: #1e293b; /* slate-800 */
+  --text-main: #f8fafc; /* slate-50 */
+  --text-muted: #94a3b8; /* slate-400 */
+  --accent: #b58a54; /* gold accent */
+  --accent-hover: #d4a373;
+}
+
+/* Base Body Override */
+body, #nc-root {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-main) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+}
+
+/* Sidebar Styling */
+.nc-app-sidebar {
+  background-color: var(--bg-card) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Sidebar Links */
+.nc-app-sidebar a {
+  color: var(--text-main) !important;
+}
+
+.nc-app-sidebar a:hover,
+.nc-app-sidebar a[aria-current="page"] {
+  background-color: rgba(181, 138, 84, 0.15) !important; /* accent low opacity */
+  color: var(--accent) !important;
+  border-left-color: var(--accent) !important;
+}
+
+/* Top Nav Styling */
+.nc-app-header {
+  background-color: var(--bg-card) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px !important;
+}
+
+/* Primary "New Book" Button */
+a[href*="/collections/books/new"], button[class*="Button-button-primary"] {
+  background-color: var(--accent) !important;
+  color: #000 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+a[href*="/collections/books/new"]:hover, button[class*="Button-button-primary"]:hover {
+  background-color: var(--accent-hover) !important;
+}
+
+/* Grid/List Items (Cards) */
+.nc-collectionPage-card {
+  background-color: var(--bg-card) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3) !important;
+}
+
+.nc-collectionPage-card:hover {
+  border-color: var(--accent) !important;
+}
+
+.nc-collectionPage-card h2 {
+  color: var(--text-main) !important;
+}
+
+/* Form Editing View */
+.nc-entryEditor-toolbar {
+  background-color: var(--bg-card) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.nc-entryEditor-toolbar button {
+  color: var(--text-main) !important;
+}
+
+.nc-entryEditor-toolbar .nc-entryEditor-toolbarActions button:last-child {
+  background-color: var(--accent) !important;
+  color: #000 !important;
+}
+
+/* Inputs */
+input, textarea, select {
+  background-color: #0f172a !important; /* darker for inputs */
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  color: var(--text-main) !important;
+  border-radius: 8px !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent) !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(181, 138, 84, 0.2) !important;
+}
+
+/* Form Labels */
+label {
+  color: var(--text-main) !important;
+  font-weight: 600 !important;
+}

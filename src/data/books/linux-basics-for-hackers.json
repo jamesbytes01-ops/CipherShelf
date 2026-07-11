@@ -1,0 +1,18 @@
+{
+  "id": "linux-basics-for-hackers",
+  "title": "Linux Basics for Hackers",
+  "author": "OccupyTheWeb",
+  "category": "Linux",
+  "rating": 4.9,
+  "price": 29.99,
+  "description": "An practical introduction to the Linux operating system designed specifically for security professionals and ethical hackers. Master terminal basics, bash scripting, and system administration.",
+  "isbn": "978-1-59327-855-7",
+  "pages": 248,
+  "language": "English",
+  "publisher": "No Starch Press",
+  "publishedYear": 2018,
+  "bestseller": true,
+  "featured": true,
+  "coverColor": "darkgray",
+  "coverId": 8508154
+}

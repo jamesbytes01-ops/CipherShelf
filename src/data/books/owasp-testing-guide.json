@@ -1,0 +1,17 @@
+{
+  "id": "owasp-testing-guide",
+  "title": "OWASP Web Security Testing Guide",
+  "author": "OWASP Foundation",
+  "category": "Web Security",
+  "rating": 4.7,
+  "price": 24.99,
+  "description": "The open-source master guide for testing the security of web applications. Covers vulnerability mapping, input validation, logic testing, session management, and configuration audits.",
+  "isbn": "978-1-387-98782-3",
+  "pages": 412,
+  "language": "English",
+  "publisher": "Lulu Press",
+  "publishedYear": 2020,
+  "bestseller": false,
+  "featured": true,
+  "coverColor": "cyan"
+}

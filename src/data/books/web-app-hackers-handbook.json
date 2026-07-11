@@ -1,0 +1,18 @@
+{
+  "id": "web-app-hackers-handbook",
+  "title": "The Web Application Hacker's Handbook",
+  "author": "Dafydd Stuttard & Marcus Pinto",
+  "category": "Web Security",
+  "rating": 4.7,
+  "price": 49.99,
+  "description": "The definitive guide to finding and exploiting security flaws in web applications. Step-by-step walkthroughs for bypassing modern defense mechanisms and securing applications.",
+  "isbn": "978-1-118-02647-2",
+  "pages": 912,
+  "language": "English",
+  "publisher": "Wiley",
+  "publishedYear": 2011,
+  "bestseller": true,
+  "featured": false,
+  "coverColor": "indigo",
+  "coverId": 8733893
+}

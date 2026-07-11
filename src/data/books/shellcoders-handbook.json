@@ -1,0 +1,18 @@
+{
+  "id": "shellcoders-handbook",
+  "title": "The Shellcoder's Handbook",
+  "author": "Chris Anley, John Heasman, Felix Linder",
+  "category": "Ethical Hacking",
+  "rating": 4.8,
+  "price": 49.99,
+  "description": "Learn to write kernel exploits, heap overflows, and target-specific payloads. Explores OS vulnerabilities across Windows, Linux, Solaris, and OS X environments.",
+  "isbn": "978-0-470-08023-8",
+  "pages": 744,
+  "language": "English",
+  "publisher": "Wiley",
+  "publishedYear": 2007,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "darkred",
+  "coverId": 1239111
+}

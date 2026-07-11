@@ -1,0 +1,17 @@
+{
+  "id": "threat-modeling",
+  "title": "Threat Modeling: Designing for Security",
+  "author": "Adam Shostack",
+  "category": "Blue Team",
+  "rating": 4.7,
+  "price": 45,
+  "description": "Learn how to predict, prevent, and fix security flaws during software design. Includes templates, frameworks (STRIDE, DREAD), and strategies for integrating threat modeling into CI/CD.",
+  "isbn": "978-1-118-80991-4",
+  "pages": 624,
+  "language": "English",
+  "publisher": "Wiley",
+  "publishedYear": 2014,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "darkslate"
+}

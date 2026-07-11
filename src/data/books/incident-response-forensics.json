@@ -1,0 +1,18 @@
+{
+  "id": "incident-response-forensics",
+  "title": "Incident Response & Computer Forensics",
+  "author": "Jason T. Luttgens, Matthew Pepe, Kevin Mandia",
+  "category": "Digital Forensics",
+  "rating": 4.7,
+  "price": 55,
+  "description": "The definitive resource for incident response teams. Learn how to preserve digital evidence, analyze system RAM, reconstruct timelines, and eradicate threat actors from networks.",
+  "isbn": "978-0-07-179839-6",
+  "pages": 624,
+  "language": "English",
+  "publisher": "McGraw-Hill",
+  "publishedYear": 2014,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "teal",
+  "coverId": 61925
+}

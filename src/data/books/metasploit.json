@@ -1,0 +1,18 @@
+{
+  "id": "metasploit",
+  "title": "Metasploit: The Penetration Tester's Guide",
+  "author": "David Kennedy, Jim O'Gorman, Devon Kearns",
+  "category": "Ethical Hacking",
+  "rating": 4.5,
+  "price": 44.99,
+  "description": "Make the most of the world's most popular penetration testing framework. Learn how to write exploit modules, execute post-exploitation modules, bypass antivirus, and manage engagements.",
+  "isbn": "978-1-59327-288-3",
+  "pages": 328,
+  "language": "English",
+  "publisher": "No Starch Press",
+  "publishedYear": 2011,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "violet",
+  "coverId": 8694179
+}

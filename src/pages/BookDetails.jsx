@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Star, ShieldCheck, Truck, RotateCcw, ArrowLeft, Plus, Minus, ShoppingBag } from 'lucide-react';
-import booksRaw from '../data/books.json';
-const booksData = booksRaw.books;
+const bookModules = import.meta.glob('../data/books/*.json', { eager: true });
+const booksData = Object.values(bookModules).map(mod => mod.default || mod);
 import { BookCover } from '../utils/svgGenerator';
 import { BookCard } from '../components/cards/BookCard';
 import { Button } from '../components/ui/Button';

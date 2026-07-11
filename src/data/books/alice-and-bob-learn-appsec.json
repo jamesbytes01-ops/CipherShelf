@@ -1,0 +1,18 @@
+{
+  "id": "alice-and-bob-learn-appsec",
+  "title": "Alice and Bob Learn Application Security",
+  "author": "Tanya Janca",
+  "category": "Web Security",
+  "rating": 4.8,
+  "price": 28.5,
+  "description": "An accessible, engaging walkthrough of application security fundamentals. Covers threat modeling, secure coding practices, static and dynamic testing tools, and DevSecOps processes.",
+  "isbn": "978-1-119-68735-1",
+  "pages": 288,
+  "language": "English",
+  "publisher": "Wiley",
+  "publishedYear": 2020,
+  "bestseller": true,
+  "featured": true,
+  "coverColor": "violet",
+  "coverId": 10514857
+}

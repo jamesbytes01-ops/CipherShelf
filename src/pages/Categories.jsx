@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
-import booksRaw from '../data/books.json';
-const booksData = booksRaw.books;
+const bookModules = import.meta.glob('../data/books/*.json', { eager: true });
+const booksData = Object.values(bookModules).map(mod => mod.default || mod);
 import { CategoryCard } from '../components/cards/CategoryCard';
 
 const ALL_CATEGORIES = [

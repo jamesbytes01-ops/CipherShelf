@@ -1,0 +1,18 @@
+{
+  "id": "blue-team-handbook",
+  "title": "Blue Team Handbook: Incident Response Edition",
+  "author": "Don Murdoch",
+  "category": "Blue Team",
+  "rating": 4.8,
+  "price": 19.99,
+  "description": "An essential field guide for security analysts, incident responders, and network defenders. Packed with commands, logs, configuration scripts, and checklists for fast response.",
+  "isbn": "978-1-5010-0968-6",
+  "pages": 172,
+  "language": "English",
+  "publisher": "CreateSpace",
+  "publishedYear": 2014,
+  "bestseller": true,
+  "featured": true,
+  "coverColor": "blue",
+  "coverId": 14328077
+}

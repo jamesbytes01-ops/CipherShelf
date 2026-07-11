@@ -1,0 +1,18 @@
+{
+  "id": "practical-forensics-linux",
+  "title": "Practical Digital Forensics for Linux Systems",
+  "author": "Philip Polstra",
+  "category": "Digital Forensics",
+  "rating": 4.6,
+  "price": 41.99,
+  "description": "A hands-on manual detailing forensics analysis on Linux servers and endpoints. Learn how to reconstruct logs, verify file hashes, search for hidden rootkits, and extract disk images.",
+  "isbn": "978-1-4842-7011-0",
+  "pages": 312,
+  "language": "English",
+  "publisher": "Apress",
+  "publishedYear": 2021,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "teal",
+  "coverId": 11440620
+}

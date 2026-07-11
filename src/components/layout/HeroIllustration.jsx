@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BookCover } from '../../utils/svgGenerator';
-import booksData from '../../data/books.json';
-const books = booksData.books;
+const bookModules = import.meta.glob('../../data/books/*.json', { eager: true });
+const books = Object.values(bookModules).map(mod => mod.default || mod);
 
 // Select 4 visually distinct books from the dataset
 const heroBooks = [

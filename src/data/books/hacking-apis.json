@@ -1,0 +1,18 @@
+{
+  "id": "hacking-apis",
+  "title": "Hacking APIs",
+  "author": "Corey J. Ball",
+  "category": "Web Security",
+  "rating": 4.6,
+  "price": 34.99,
+  "description": "Explore the critical vulnerabilities hidden in modern API endpoints. Learn how to map API systems, execute injection attacks, scan for authentication bypasses, and construct secure integrations.",
+  "isbn": "978-1-7185-0244-4",
+  "pages": 360,
+  "language": "English",
+  "publisher": "No Starch Press",
+  "publishedYear": 2022,
+  "bestseller": true,
+  "featured": true,
+  "coverColor": "cyan",
+  "coverId": 14641848
+}

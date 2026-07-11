@@ -1,0 +1,18 @@
+{
+  "id": "serious-cryptography",
+  "title": "Serious Cryptography",
+  "author": "Jean-Philippe Aumasson",
+  "category": "Cryptography",
+  "rating": 4.8,
+  "price": 39.99,
+  "description": "A practical introduction to modern encryption, hashing, and security algorithms. Learn about block ciphers, public-key systems, authenticated encryption, and potential cryptographic vulnerabilities.",
+  "isbn": "978-1-59327-826-7",
+  "pages": 312,
+  "language": "English",
+  "publisher": "No Starch Press",
+  "publishedYear": 2017,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "purple",
+  "coverId": 8232506
+}

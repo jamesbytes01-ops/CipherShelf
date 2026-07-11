@@ -1,0 +1,17 @@
+{
+  "id": "network-security-essentials",
+  "title": "Network Security Essentials",
+  "author": "William Stallings",
+  "category": "Networking",
+  "rating": 4.3,
+  "price": 79.99,
+  "description": "A clean, mathematically rigorous introduction to network security protocols, system configurations, firewalls, threat modeling, security architecture, and cryptography standard implementations.",
+  "isbn": "978-0-13-452733-8",
+  "pages": 448,
+  "language": "English",
+  "publisher": "Pearson",
+  "publishedYear": 2017,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "zinc"
+}

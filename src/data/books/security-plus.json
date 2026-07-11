@@ -1,0 +1,17 @@
+{
+  "id": "security-plus",
+  "title": "CompTIA Security+ Study Guide",
+  "author": "Mike Chapple & David Seidl",
+  "category": "Blue Team",
+  "rating": 4.7,
+  "price": 42.99,
+  "description": "The ultimate reference for the CompTIA Security+ SY0-701 exam. Master network security foundations, risk management, threat mitigation, identity controls, and enterprise operations.",
+  "isbn": "978-1-119-73620-2",
+  "pages": 528,
+  "language": "English",
+  "publisher": "Sybex",
+  "publishedYear": 2023,
+  "bestseller": true,
+  "featured": false,
+  "coverColor": "orange"
+}

@@ -1,0 +1,17 @@
+{
+  "id": "applied-cryptography",
+  "title": "Applied Cryptography",
+  "author": "Bruce Schneier",
+  "category": "Cryptography",
+  "rating": 4.8,
+  "price": 54.99,
+  "description": "The classic cryptographic treatise detailing protocols, algorithms, and source code. Learn to implement public-key cryptography, symmetric ciphers, and key exchange schemes safely.",
+  "isbn": "978-0-471-11709-4",
+  "pages": 784,
+  "language": "English",
+  "publisher": "Wiley",
+  "publishedYear": 1996,
+  "bestseller": false,
+  "featured": true,
+  "coverColor": "purple"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "ceh-guide",
+  "title": "CEH Certified Ethical Hacker Study Guide",
+  "author": "Ric Messier",
+  "category": "Ethical Hacking",
+  "rating": 4.4,
+  "price": 49.99,
+  "description": "Prepare for the Certified Ethical Hacker exam with practical, real-world instruction. Covers intrusion detection, web app vulnerabilities, cryptography, cloud computing, and IoT systems.",
+  "isbn": "978-1-119-79524-7",
+  "pages": 650,
+  "language": "English",
+  "publisher": "Sybex",
+  "publishedYear": 2021,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "amber",
+  "coverId": 9767348
+}

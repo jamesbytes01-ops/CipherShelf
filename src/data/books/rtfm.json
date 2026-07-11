@@ -1,0 +1,18 @@
+{
+  "id": "rtfm",
+  "title": "RTFM: Red Team Field Manual",
+  "author": "Ben Clark",
+  "category": "Red Team",
+  "rating": 4.9,
+  "price": 14.99,
+  "description": "A compact, highly dense reference manual listing critical commands for red team members. Contains syntaxes for Linux, Windows, Cisco devices, networking, and common testing utilities.",
+  "isbn": "978-1-4942-9550-9",
+  "pages": 96,
+  "language": "English",
+  "publisher": "CreateSpace",
+  "publishedYear": 2014,
+  "bestseller": true,
+  "featured": true,
+  "coverColor": "crimson",
+  "coverId": 10866445
+}

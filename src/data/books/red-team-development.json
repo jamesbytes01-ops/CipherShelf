@@ -1,0 +1,18 @@
+{
+  "id": "red-team-development",
+  "title": "Red Team Development and Operations",
+  "author": "Joe Vest & James Tubberville",
+  "category": "Red Team",
+  "rating": 4.6,
+  "price": 32.99,
+  "description": "A comprehensive guide to building, managing, and executing realistic red team operations. Learn how to design adversary simulations, control risk, and report high-impact outcomes.",
+  "isbn": "978-1-7927-5674-0",
+  "pages": 286,
+  "language": "English",
+  "publisher": "Adversary Simulation LLC",
+  "publishedYear": 2020,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "red",
+  "coverId": 410889
+}

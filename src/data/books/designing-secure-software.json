@@ -1,0 +1,17 @@
+{
+  "id": "designing-secure-software",
+  "title": "Designing Secure Software",
+  "author": "Loren Kohnfelder",
+  "category": "Web Security",
+  "rating": 4.5,
+  "price": 31.99,
+  "description": "A guide for developers to write vulnerability-free code from inception. Focuses on safe API design, input filtering, authorization modeling, and secure software development lifecycles.",
+  "isbn": "978-1-7185-0192-8",
+  "pages": 240,
+  "language": "English",
+  "publisher": "No Starch Press",
+  "publishedYear": 2021,
+  "bestseller": false,
+  "featured": false,
+  "coverColor": "emerald"
+}
