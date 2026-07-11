@@ -246,6 +246,61 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 2.5. THE ENGINEER'S ADVANTAGE */}
+      <section className="py-20 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">The Engineer's Advantage</h2>
+            <p className="text-slate-500 mt-3 text-sm leading-relaxed font-medium">Why thousands of security professionals choose CipherShelf for their continued education.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Curated Selection</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">Hand-picked and reviewed by active security researchers.</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
+                <Sparkles className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Instant Digital</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">Get DRM-free PDF & EPUB versions instantly upon purchase.</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                <Truck className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Secure Shipping</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">Packed with extreme care and shipped globally with tracking.</p>
+              </div>
+            </div>
+
+            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
+                <RotateCcw className="w-5 h-5" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">7-Day Returns</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-medium">Return any physical book in original condition for a full refund.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. SHOP BY CATEGORY SECTION */}
       <section className="py-24 bg-slate-950 relative overflow-hidden">
         {/* Premium grid background */}
