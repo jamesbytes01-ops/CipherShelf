@@ -59,6 +59,8 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        {/* Logo left */}
+        <Link to="/" className="flex items-center gap-2.5 group">
           <div className="w-9 h-9 rounded-lg bg-slate-900 flex items-center justify-center transition-transform group-hover:scale-105 duration-300">
             <Shield className="w-5 h-5 text-white stroke-[2]" />
           </div>
