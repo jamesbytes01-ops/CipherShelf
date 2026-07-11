@@ -1,36 +1,34 @@
 backend:
   name: git-gateway
-  branch: main
+  branch: main # Branch to update (optional; defaults to master)
 
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "public/assets"
+public_folder: "/assets"
 
 collections:
   - name: "catalog"
-    label: "Store Catalog"
-    files:
-      - label: "Books Database"
-        name: "books_db"
-        file: "src/data/books.json"
-        description: "Manage the entire catalog of books"
+    label: "Book Catalog"
+    file: "src/data/books.json"
+    description: "Manage the bookstore's inventory"
+    fields:
+      - name: books
+        label: Books
+        widget: list
         fields:
-          - name: "books"
-            label: "Books List"
-            widget: "list"
-            fields:
-              - {label: "ID (slug)", name: "id", widget: "string"}
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Author", name: "author", widget: "string"}
-              - {label: "Category", name: "category", widget: "string"}
-              - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5}
-              - {label: "Price", name: "price", widget: "number", value_type: "float"}
-              - {label: "Description", name: "description", widget: "text"}
-              - {label: "ISBN", name: "isbn", widget: "string"}
-              - {label: "Pages", name: "pages", widget: "number"}
-              - {label: "Language", name: "language", widget: "string", default: "English"}
-              - {label: "Publisher", name: "publisher", widget: "string"}
-              - {label: "Published Year", name: "publishedYear", widget: "number"}
-              - {label: "Bestseller", name: "bestseller", widget: "boolean", default: false}
-              - {label: "Featured", name: "featured", widget: "boolean", default: false}
-              - {label: "Cover Color", name: "coverColor", widget: "select", options: ["emerald", "darkgray", "blue", "purple", "rose", "slate", "indigo", "amber", "teal"]}
-              - {label: "Cover ID (Random integer for SVG)", name: "coverId", widget: "number"}
+          - {label: "ID (slug)", name: "id", widget: "string", hint: "Unique identifier, e.g., black-hat-python"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Author", name: "author", widget: "string"}
+          - {label: "Category", name: "category", widget: "select", options: ["Ethical Hacking", "Cryptography", "OSINT", "Blue Team", "SOC", "Red Team", "Networking", "Linux", "Python", "Web Security", "Cloud Security", "Malware Analysis", "Digital Forensics"]}
+          - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5}
+          - {label: "Price", name: "price", widget: "number", value_type: "float"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "ISBN", name: "isbn", widget: "string"}
+          - {label: "Pages", name: "pages", widget: "number", value_type: "int"}
+          - {label: "Language", name: "language", widget: "string", default: "English"}
+          - {label: "Publisher", name: "publisher", widget: "string"}
+          - {label: "Published Year", name: "publishedYear", widget: "number", value_type: "int"}
+          - {label: "Bestseller", name: "bestseller", widget: "boolean", default: false}
+          - {label: "Featured", name: "featured", widget: "boolean", default: false}
+          - {label: "Cover Color", name: "coverColor", widget: "string"}
+          - {label: "Cover ID", name: "coverId", widget: "number", required: false}
+          - {label: "Image URL", name: "image", widget: "string", required: false}

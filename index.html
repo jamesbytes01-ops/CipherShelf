@@ -4,15 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CipherShelf</title>
-    <!-- Netlify Identity Widget for CMS Authentication -->
+    <title>CipherShelf - Premium Technical Bookstore</title>
+    <!-- Netlify Identity Widget -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
-    
-    <!-- Redirect to Admin Dashboard upon login from the main site -->
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {

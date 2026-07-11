@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { Search, SlidersHorizontal, RotateCcw, Star, X } from 'lucide-react';
-import _booksRaw from '../data/books.json';
-const booksData = Array.isArray(_booksRaw) ? _booksRaw : (_booksRaw.books || []);
+import booksData from '../data/books.json';
 import { BookCard } from '../components/cards/BookCard';
 import { Button } from '../components/ui/Button';
 
