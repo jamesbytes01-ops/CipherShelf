@@ -162,21 +162,21 @@ export default function Home() {
       </section>
 
       {/* 1.5 TRUSTED BY CORPORATE MARQUEE */}
-      <section className="py-8 bg-white border-b border-slate-100 overflow-hidden relative">
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+      <section className="py-8 bg-sky-50 border-b border-sky-100 overflow-hidden relative">
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-sky-50 to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-sky-50 to-transparent z-10 pointer-events-none" />
         
         <div className="flex items-center gap-12 whitespace-nowrap animate-marquee">
           {/* We duplicate the list twice to create a seamless infinite scrolling effect */}
           {[1, 2].map((set) => (
-            <div key={set} className="flex items-center gap-16 text-slate-300 font-bold text-xl md:text-2xl tracking-tighter uppercase px-8">
-              <span className="hover:text-slate-900 transition-colors duration-300">Google</span>
-              <span className="hover:text-slate-900 transition-colors duration-300">Microsoft</span>
-              <span className="hover:text-slate-900 transition-colors duration-300">CrowdStrike</span>
-              <span className="hover:text-slate-900 transition-colors duration-300">Cloudflare</span>
-              <span className="hover:text-slate-900 transition-colors duration-300">Palo Alto</span>
-              <span className="hover:text-slate-900 transition-colors duration-300">Okta</span>
-              <span className="hover:text-slate-900 transition-colors duration-300">Cisco</span>
+            <div key={set} className="flex items-center gap-16 text-sky-400/60 font-bold text-xl md:text-2xl tracking-tighter uppercase px-8">
+              <span className="hover:text-sky-700 transition-colors duration-300">Google</span>
+              <span className="hover:text-sky-700 transition-colors duration-300">Microsoft</span>
+              <span className="hover:text-sky-700 transition-colors duration-300">CrowdStrike</span>
+              <span className="hover:text-sky-700 transition-colors duration-300">Cloudflare</span>
+              <span className="hover:text-sky-700 transition-colors duration-300">Palo Alto</span>
+              <span className="hover:text-sky-700 transition-colors duration-300">Okta</span>
+              <span className="hover:text-sky-700 transition-colors duration-300">Cisco</span>
             </div>
           ))}
         </div>
@@ -230,13 +230,13 @@ export default function Home() {
       </section>
 
       {/* 3. SHOP BY CATEGORY SECTION */}
-      <section className="py-20 bg-slate-950 relative overflow-hidden">
-        {/* Subtle dot matrix background to match premium tech feel */}
-        <div className="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:20px_20px] opacity-20 pointer-events-none" />
+      <section className="py-24 bg-slate-950 relative overflow-hidden">
+        {/* Premium grid background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
         
         {/* Soft glowing ambient lights */}
-        <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-accent/15 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
+        <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
 
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <div className="mb-14 max-w-md mx-auto">
@@ -260,13 +260,13 @@ export default function Home() {
                   to={`/books?category=${encodeURIComponent(cat.name)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col items-center justify-center p-7 bg-slate-900/50 backdrop-blur-md border border-slate-800 rounded-[24px] shadow-[0_8px_30px_rgb(0,0,0,0.4)] hover:shadow-[0_0_35px_-5px_rgba(181,138,84,0.15)] hover:-translate-y-1.5 hover:border-accent/40 hover:bg-slate-800/80 transition-all duration-400 ease-out relative overflow-hidden"
+                  className="group flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[24px] shadow-2xl hover:shadow-[0_0_40px_-10px_rgba(181,138,84,0.3)] hover:-translate-y-2 hover:border-accent/40 hover:bg-white/10 transition-all duration-500 ease-out relative overflow-hidden"
                 >
                   {/* Hover gradient shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-accent/0 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-accent/0 via-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
                   {/* Icon container */}
-                  <div className="w-14 h-14 rounded-2xl border border-slate-700 bg-slate-950 text-slate-400 flex items-center justify-center mb-4 group-hover:bg-accent/10 group-hover:text-accent group-hover:border-accent/30 transition-all duration-300 shadow-inner">
+                  <div className="w-16 h-16 rounded-2xl border border-white/10 bg-black/40 text-slate-300 flex items-center justify-center mb-5 group-hover:bg-accent/20 group-hover:text-accent group-hover:border-accent/50 transition-all duration-500 shadow-inner">
                     {cat.icon}
                   </div>
                   
@@ -282,10 +282,8 @@ export default function Home() {
             ))}
           </motion.div>
 
-          <Link to="/categories" target="_blank" rel="noopener noreferrer">
-            <Button variant="outline" size="md" className="px-8 py-3 bg-slate-900 border-slate-700 text-white hover:bg-slate-800 hover:border-slate-500 text-xs font-bold tracking-wide uppercase transition-all shadow-xl">
-              Explore All Intelligence
-            </Button>
+          <Link to="/categories" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-10 py-4 bg-accent/10 border border-accent/30 text-accent hover:bg-accent hover:text-slate-950 text-[11px] font-extrabold tracking-[0.2em] uppercase rounded-full transition-all duration-500 hover:shadow-[0_0_30px_0px_rgba(181,138,84,0.4)] hover:-translate-y-1">
+            Explore All Intelligence
           </Link>
         </div>
       </section>
@@ -416,46 +414,61 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. INTERACTIVE HACKER TERMINAL EASTER EGG */}
-      <section className="py-16 bg-slate-950 border-t border-slate-900 relative overflow-hidden">
-        {/* Matrix style background lines */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[length:100%_32px] pointer-events-none" />
-        
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
-          <div className="flex items-center gap-3 mb-6">
-            <TerminalSquare className="w-6 h-6 text-accent" />
-            <h2 className="text-xl font-bold text-white tracking-tight">System Access</h2>
+      {/* 7. WHY CHOOSE CIPHERSHELF */}
+      <section className="py-24 bg-slate-50 border-t border-slate-200 relative overflow-hidden">
+        {/* Background elements */}
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">The Engineer's Advantage</h2>
+            <p className="text-slate-500 mt-4 text-sm leading-relaxed">Why thousands of security professionals, from junior pentesters to CISOs, choose CipherShelf for their continued education.</p>
           </div>
-          
-          <div className="w-full bg-slate-900 border border-slate-800 rounded-xl overflow-hidden shadow-2xl font-mono text-sm">
-            {/* Terminal Header */}
-            <div className="bg-slate-800/50 px-4 py-2 border-b border-slate-800 flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-red-500/80" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-              <div className="w-3 h-3 rounded-full bg-green-500/80" />
-              <span className="ml-2 text-xs text-slate-500 font-semibold tracking-wide">root@ciphershelf:~</span>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+            {/* Card 1 */}
+            <div className="bg-white p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-slate-200/40 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-12 h-12 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-lg mb-2">Curated Selection</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">No filler. Every book on our shelf is hand-picked and reviewed by active security researchers.</p>
+              </div>
             </div>
-            
-            {/* Terminal Body */}
-            <div className="p-5 min-h-[220px] max-h-[300px] overflow-y-auto flex flex-col gap-1.5 custom-scrollbar">
-              {terminalOutput.map((line, idx) => (
-                <div key={idx} className={`${line.type === 'error' ? 'text-red-400' : line.type === 'success' ? 'text-accent font-bold' : line.type === 'user' ? 'text-white' : 'text-slate-400'}`}>
-                  {line.text}
-                </div>
-              ))}
-              
-              <form onSubmit={handleTerminalSubmit} className="flex items-center gap-2 mt-2">
-                <span className="text-emerald-500 font-bold">visitor@ciphershelf:~$</span>
-                <input 
-                  type="text" 
-                  value={terminalInput}
-                  onChange={(e) => setTerminalInput(e.target.value)}
-                  className="bg-transparent border-none outline-none text-white flex-1 font-mono shadow-none focus:ring-0 p-0"
-                  autoComplete="off"
-                  spellCheck="false"
-                  autoFocus
-                />
-              </form>
+
+            {/* Card 2 */}
+            <div className="bg-white p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-slate-200/40 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600">
+                <Sparkles className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-lg mb-2">Instant Digital</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">Need it now? Get DRM-free PDF & EPUB versions instantly upon purchase for immediate study.</p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-slate-200/40 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-12 h-12 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+                <Truck className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-lg mb-2">Secure Shipping</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">Physical copies are packed with extreme care and shipped globally with tracking and insurance.</p>
+              </div>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white p-8 rounded-[24px] border border-slate-100 shadow-xl shadow-slate-200/40 flex flex-col gap-5 hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-600">
+                <RotateCcw className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-extrabold text-slate-900 text-lg mb-2">30-Day Returns</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">Not the right book? Return any physical book in original condition within 30 days for a full refund.</p>
+              </div>
             </div>
           </div>
         </div>

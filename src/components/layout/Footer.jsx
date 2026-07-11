@@ -27,37 +27,37 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-white border-t border-slate-100 text-slate-600 mt-auto">
+    <footer className="bg-[#0E243F] border-t border-slate-800 text-slate-400 mt-auto">
       {/* Top Section */}
       <div className="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-12">
         {/* Brand info */}
         <div className="lg:col-span-2 flex flex-col gap-5">
           <Link to="/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
               <Shield className="w-4.5 h-4.5 text-white stroke-[2]" />
             </div>
-            <span className="font-extrabold text-lg text-slate-900 tracking-tight">
+            <span className="font-extrabold text-lg text-white tracking-tight">
               Cyber<span className="text-accent">Shelf</span>
             </span>
           </Link>
-          <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
+          <p className="text-sm text-slate-400 max-w-sm leading-relaxed">
             The world's premier digital bookshelf for security engineers, research analysts, malware developers, and cryptography experts.
           </p>
           <div className="flex items-center gap-4 mt-2">
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-slate-50 hover:bg-slate-100 hover:text-slate-900 transition-colors" aria-label="YouTube">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors text-slate-400" aria-label="YouTube">
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z" />
                 <polygon points="10 15 15 12 10 9" />
               </svg>
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-slate-50 hover:bg-slate-100 hover:text-slate-900 transition-colors" aria-label="Instagram">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors text-slate-400" aria-label="Instagram">
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
               </svg>
             </a>
-            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-slate-50 hover:bg-slate-100 hover:text-slate-900 transition-colors" aria-label="X">
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-white/5 hover:bg-white/10 hover:text-white transition-colors text-slate-400" aria-label="X">
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg>
@@ -67,30 +67,30 @@ export function Footer() {
 
         {/* Quick links */}
         <div className="flex flex-col gap-4">
-          <h3 className="font-semibold text-slate-900 text-sm tracking-wide uppercase">Company</h3>
+          <h3 className="font-semibold text-white text-sm tracking-wide uppercase">Company</h3>
           <ul className="flex flex-col gap-2.5 text-sm">
             <li>
-              <Link to="/about" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">About Us</Link>
+              <Link to="/about" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">About Us</Link>
             </li>
             <li>
-              <Link to="/contact" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Contact</Link>
+              <Link to="/contact" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Contact</Link>
             </li>
             <li>
-              <Link to="/legal/careers" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Careers</Link>
+              <Link to="/legal/careers" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Careers</Link>
             </li>
             <li>
-              <Link to="/legal/press" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Press Room</Link>
+              <Link to="/legal/press" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Press Room</Link>
             </li>
           </ul>
         </div>
 
         {/* Categories */}
         <div className="flex flex-col gap-4">
-          <h3 className="font-semibold text-slate-900 text-sm tracking-wide uppercase">Core Topics</h3>
+          <h3 className="font-semibold text-white text-sm tracking-wide uppercase">Core Topics</h3>
           <ul className="flex flex-col gap-2.5 text-sm">
             {categories.map((cat) => (
               <li key={cat}>
-                <Link to={`/books?category=${encodeURIComponent(cat)}`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">
+                <Link to={`/books?category=${encodeURIComponent(cat)}`} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   {cat}
                 </Link>
               </li>
@@ -100,30 +100,30 @@ export function Footer() {
 
         {/* Legal links */}
         <div className="flex flex-col gap-4">
-          <h3 className="font-semibold text-slate-900 text-sm tracking-wide uppercase">Legal</h3>
+          <h3 className="font-semibold text-white text-sm tracking-wide uppercase">Legal</h3>
           <ul className="flex flex-col gap-2.5 text-sm">
             <li>
-              <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Terms of Service</Link>
+              <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</Link>
             </li>
             <li>
-              <Link to="/legal/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Privacy Policy</Link>
+              <Link to="/legal/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Privacy Policy</Link>
             </li>
             <li>
-              <Link to="/legal/returns" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Return Policy</Link>
+              <Link to="/legal/returns" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Return Policy</Link>
             </li>
             <li>
-              <Link to="/legal/security" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Security Disclosures</Link>
+              <Link to="/legal/security" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Security Disclosures</Link>
             </li>
             <li>
-              <Link to="/legal/licenses" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Licenses &amp; Patents</Link>
+              <Link to="/legal/licenses" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Licenses &amp; Patents</Link>
             </li>
           </ul>
         </div>
 
         {/* Newsletter */}
         <div className="flex flex-col gap-4">
-          <h3 className="font-semibold text-slate-900 text-sm tracking-wide uppercase">Newsletter</h3>
-          <p className="text-xs text-slate-500 leading-relaxed">
+          <h3 className="font-semibold text-white text-sm tracking-wide uppercase">Newsletter</h3>
+          <p className="text-xs text-slate-400 leading-relaxed">
             Get curated security readings, fresh releases, and exclusive discounts direct to your inbox.
           </p>
           <form onSubmit={handleSubscribe} className="flex flex-col gap-2 mt-1">
@@ -134,18 +134,18 @@ export function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full bg-slate-50 border border-slate-200 text-xs rounded-xl pl-3 pr-10 py-2.5 outline-none focus:bg-white focus:border-slate-400 transition-all duration-200"
+                className="w-full bg-white/5 border border-white/10 text-xs text-white placeholder-slate-500 rounded-xl pl-3 pr-10 py-2.5 outline-none focus:bg-white/10 focus:border-white/20 transition-all duration-200"
               />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-900 p-1"
+                className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1 transition-colors"
                 aria-label="Subscribe"
               >
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
             {subscribed && (
-              <span className="text-[10px] text-emerald-600 font-medium animate-fade-in">
+              <span className="text-[10px] text-accent font-medium animate-fade-in">
                 Thank you! You are subscribed.
               </span>
             )}
@@ -154,13 +154,13 @@ export function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-slate-100 py-8 bg-slate-50/50">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div className="border-t border-white/5 py-8 bg-black/20">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <span>&copy; {new Date().getFullYear()} CyberShelf. All rights reserved.</span>
           <div className="flex gap-6">
-            <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Terms of Service</Link>
-            <Link to="/legal/sitemap" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Sitemap</Link>
-            <Link to="/legal/security" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Security Disclosures</Link>
+            <Link to="/legal/terms" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/legal/sitemap" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Sitemap</Link>
+            <Link to="/legal/security" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Security Disclosures</Link>
           </div>
         </div>
       </div>
