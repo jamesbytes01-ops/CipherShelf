@@ -123,7 +123,7 @@ export default function Home() {
         <div className="absolute top-0 right-1/4 w-[380px] h-[380px] bg-accent/4 rounded-full blur-[90px] pointer-events-none z-0" />
         <div className="absolute bottom-4 left-12 w-[240px] h-[240px] bg-slate-100 rounded-full blur-[60px] pointer-events-none z-0 opacity-40" />
 
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div className="w-full max-w-[92%] xl:max-w-[1600px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
           {/* Left Text */}
           <div className="lg:col-span-6 flex flex-col items-start text-left gap-5">
             {/* Trust Badge */}
