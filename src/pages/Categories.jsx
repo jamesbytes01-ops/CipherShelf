@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
-import booksData from '../data/books.json';
+import _booksRaw from '../data/books.json';
+const booksData = Array.isArray(_booksRaw) ? _booksRaw : (_booksRaw.books || []);
 import { CategoryCard } from '../components/cards/CategoryCard';
 
 const ALL_CATEGORIES = [

@@ -1,80 +1,36 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: main
 
-media_folder: "public/assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "blog"
-    label: "Blog Posts"
-    folder: "public/content/blog"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
-      - {label: "Reading Time (mins)", name: "reading_time", widget: "number"}
-      - {label: "Short Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "homepage"
-    label: "Homepage Settings"
+  - name: "catalog"
+    label: "Store Catalog"
     files:
-      - label: "Hero Section"
-        name: "hero"
-        file: "public/content/homepage/hero.json"
+      - label: "Books Database"
+        name: "books_db"
+        file: "src/data/books.json"
+        description: "Manage the entire catalog of books"
         fields:
-          - {label: "Hero Title", name: "title", widget: "string"}
-          - {label: "Hero Subtitle", name: "subtitle", widget: "text"}
-          - {
-              label: "Hero Buttons", 
-              name: "buttons", 
-              widget: "list", 
-              fields: [
-                {label: "Label", name: "label", widget: "string"},
-                {label: "Link", name: "link", widget: "string"},
-                {label: "Variant", name: "variant", widget: "select", options: ["primary", "accent", "outline"]}
-              ]
-            }
-      - label: "Featured Books"
-        name: "featured_books"
-        file: "public/content/homepage/featured_books.json"
-        fields:
-          - {label: "Section Title", name: "title", widget: "string"}
-          - {label: "Section Subtitle", name: "subtitle", widget: "text"}
-      - label: "Featured Categories"
-        name: "featured_categories"
-        file: "public/content/homepage/featured_categories.json"
-        fields:
-          - {label: "Section Title", name: "title", widget: "string"}
-          - {label: "Section Subtitle", name: "subtitle", widget: "text"}
-
-  - name: "footer"
-    label: "Footer Settings"
-    files:
-      - label: "Footer Content"
-        name: "footer_content"
-        file: "public/content/footer/content.json"
-        fields:
-          - {label: "Newsletter Heading", name: "newsletter_title", widget: "string"}
-          - {label: "Newsletter Text", name: "newsletter_text", widget: "text"}
-          - {
-              label: "Links Columns", 
-              name: "columns", 
-              widget: "list", 
-              fields: [
-                {label: "Column Title", name: "title", widget: "string"},
-                {
-                  label: "Links", 
-                  name: "links", 
-                  widget: "list", 
-                  fields: [
-                    {label: "Label", name: "label", widget: "string"},
-                    {label: "URL", name: "url", widget: "string"}
-                  ]
-                }
-              ]
-            }
+          - name: "books"
+            label: "Books List"
+            widget: "list"
+            fields:
+              - {label: "ID (slug)", name: "id", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Author", name: "author", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Rating", name: "rating", widget: "number", value_type: "float", min: 0, max: 5}
+              - {label: "Price", name: "price", widget: "number", value_type: "float"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "ISBN", name: "isbn", widget: "string"}
+              - {label: "Pages", name: "pages", widget: "number"}
+              - {label: "Language", name: "language", widget: "string", default: "English"}
+              - {label: "Publisher", name: "publisher", widget: "string"}
+              - {label: "Published Year", name: "publishedYear", widget: "number"}
+              - {label: "Bestseller", name: "bestseller", widget: "boolean", default: false}
+              - {label: "Featured", name: "featured", widget: "boolean", default: false}
+              - {label: "Cover Color", name: "coverColor", widget: "select", options: ["emerald", "darkgray", "blue", "purple", "rose", "slate", "indigo", "amber", "teal"]}
+              - {label: "Cover ID (Random integer for SVG)", name: "coverId", widget: "number"}

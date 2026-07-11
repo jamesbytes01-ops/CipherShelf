@@ -108,14 +108,14 @@ export default function FAQ() {
                   </h3>
                   <div className="flex flex-col gap-3">
                     {category.items.map((item, itemIdx) => {
-                      const globalIdx = \`\${catIdx}-\${itemIdx}\`;
+                      const globalIdx = `${catIdx}-${itemIdx}`;
                       const isOpen = openIndex === globalIdx;
                       return (
                         <div 
                           key={globalIdx}
-                          className={\`border rounded-xl transition-all duration-300 overflow-hidden \${
+                          className={`border rounded-xl transition-all duration-300 overflow-hidden ${
                             isOpen ? 'border-accent/40 bg-white shadow-md' : 'border-slate-200 bg-white hover:border-slate-300'
-                          }\`}
+                          }`}
                         >
                           <button
                             onClick={() => toggleFaq(globalIdx)}
@@ -124,17 +124,17 @@ export default function FAQ() {
                             <span className="font-bold text-slate-900 text-sm md:text-base pr-4">
                               {item.q}
                             </span>
-                            <div className={\`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 transition-colors \${
+                            <div className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 transition-colors ${
                               isOpen ? 'bg-accent/10 text-accent' : 'bg-slate-50 text-slate-400'
-                            }\`}>
+                            }`}>
                               {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
                             </div>
                           </button>
                           
                           <div 
-                            className={\`px-6 overflow-hidden transition-all duration-300 ease-in-out \${
+                            className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
                               isOpen ? 'max-h-96 pb-5 opacity-100' : 'max-h-0 opacity-0'
-                            }\`}
+                            }`}
                           >
                             <div className="pt-2 border-t border-slate-50">
                               <p className="text-sm text-slate-600 leading-relaxed font-medium">

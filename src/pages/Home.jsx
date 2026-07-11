@@ -6,7 +6,8 @@ import {
   Flame, Network, Terminal, Key, Cpu, Search, Star, Sparkles, Mail,
   ChevronRight, TerminalSquare
 } from 'lucide-react';
-import booksData from '../data/books.json';
+import _booksRaw from '../data/books.json';
+const booksData = Array.isArray(_booksRaw) ? _booksRaw : (_booksRaw.books || []);
 import { BookCard } from '../components/cards/BookCard';
 import { Button } from '../components/ui/Button';
 import { HeroIllustration } from '../components/layout/HeroIllustration';
@@ -116,16 +117,16 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden pt-16 pb-12 bg-white border-b border-slate-50">
-        {/* Modern Dot-Matrix Grid Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-45 pointer-events-none z-0" />
+        {/* Premium Blueprint Grid Background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none z-0 opacity-80" />
         
         {/* Soft Decorative Blurred Spotlights */}
-        <div className="absolute top-0 right-1/4 w-[380px] h-[380px] bg-accent/4 rounded-full blur-[90px] pointer-events-none z-0" />
-        <div className="absolute bottom-4 left-12 w-[240px] h-[240px] bg-slate-100 rounded-full blur-[60px] pointer-events-none z-0 opacity-40" />
+        <div className="absolute top-[-10%] right-[10%] w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none z-0 mix-blend-multiply" />
+        <div className="absolute bottom-[-10%] left-[5%] w-[400px] h-[400px] bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none z-0 mix-blend-multiply" />
 
-        <div className="w-full max-w-[92%] xl:max-w-[1600px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
+        <div className="w-full max-w-[95%] xl:max-w-[1400px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
           {/* Left Text */}
-          <div className="lg:col-span-6 flex flex-col items-start text-left gap-5">
+          <div className="lg:col-span-5 flex flex-col items-start text-left gap-5 xl:pr-10">
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 shadow-sm">
               <div className="flex gap-0.5 text-amber-500">
@@ -163,10 +164,19 @@ export default function Home() {
                 </Button>
               </Link>
             </div>
+
+            {/* TRUST ROW */}
+            <div className="flex items-center gap-4 mt-6 text-[10px] md:text-[11px] font-bold text-slate-500 uppercase tracking-widest">
+              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-accent" /> Expert Curated</span>
+              <span className="w-1 h-1 rounded-full bg-slate-300" />
+              <span className="flex items-center gap-1.5"><TerminalSquare className="w-3.5 h-3.5 text-accent" /> DRM-Free</span>
+              <span className="hidden md:inline-block w-1 h-1 rounded-full bg-slate-300" />
+              <span className="hidden md:flex items-center gap-1.5"><Star className="w-3.5 h-3.5 text-accent" /> Top Rated</span>
+            </div>
           </div>
 
           {/* Right Mug Stack Illustration */}
-          <div className="lg:col-span-6 w-full flex justify-center">
+          <div className="lg:col-span-7 w-full flex justify-center lg:justify-end mt-8 lg:mt-0">
             <HeroIllustration />
           </div>
         </div>
