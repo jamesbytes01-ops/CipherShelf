@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { 
   ArrowRight, BookOpen, ShieldCheck, Truck, RotateCcw, 
   Flame, Network, Terminal, Key, Cpu, Search, Star, Sparkles, Mail,
-  ChevronRight, TerminalSquare
+  ChevronRight, TerminalSquare, Zap, Lock
 } from 'lucide-react';
 const bookModules = import.meta.glob('../data/books/*.json', { eager: true });
 const booksData = Object.values(bookModules).map(mod => mod.default || mod);
@@ -13,14 +13,14 @@ import { Button } from '../components/ui/Button';
 import { HeroIllustration } from '../components/layout/HeroIllustration';
 import { BookCover } from '../utils/svgGenerator';
 import promoRealBooksImage from '../assets/promo-real-books.png';
-import heroEditorialImage from '../assets/hero-editorial.png';
+import heroDarkBg from '../assets/hero-bookshelf-even.png';
 
 export default function Home() {
   const [email, setEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
   const [promoHovered, setPromoHovered] = useState(false);
   
-  // Terminal Easter Egg State
+  const [activeTestimonial, setActiveTestimonial] = useState(0);
   const [terminalInput, setTerminalInput] = useState('');
   const [terminalOutput, setTerminalOutput] = useState([
     { type: 'system', text: 'CipherOS v2.4.1 (tty1)' },
@@ -65,28 +65,91 @@ export default function Home() {
   const featuredBooks = booksData.filter((book) => book.featured).slice(0, 5);
 
 
-  // Testimonials list
+  // Testimonials list (12 items for 4 slides)
   const testimonials = [
     {
       quote: "CyberShelf has the best collection of cybersecurity books. The quality and delivery are excellent.",
       name: "Rohit Sharma",
       role: "Security Analyst",
       stars: 5,
-      avatar: "R"
+      avatar: "https://i.pravatar.cc/150?u=rohit"
     },
     {
       quote: "Great prices, original books and fast delivery. My go-to store for all tech books!",
       name: "Sneha Verma",
       role: "Penetration Tester",
       stars: 5,
-      avatar: "S"
+      avatar: "https://i.pravatar.cc/150?u=sneha"
     },
     {
       quote: "I found books here that were out of stock everywhere else. Highly recommended!",
       name: "Ankit Patel",
       role: "Cybersecurity Student",
       stars: 5,
-      avatar: "A"
+      avatar: "https://i.pravatar.cc/150?u=ankit"
+    },
+    {
+      quote: "An essential resource for any blue teamer. The defensive playbooks are top notch.",
+      name: "David K.",
+      role: "Security Engineer",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=david"
+    },
+    {
+      quote: "I passed my OSCP thanks to the materials I found here. Highly recommend!",
+      name: "Sarah L.",
+      role: "Penetration Tester",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=sarah"
+    },
+    {
+      quote: "The quality of these books is unmatched. Fast shipping and great customer service.",
+      name: "Michael T.",
+      role: "CISO",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=michael"
+    },
+    {
+      quote: "CipherShelf is my secret weapon for staying ahead of the latest threats.",
+      name: "Elena R.",
+      role: "Threat Hunter",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=elena"
+    },
+    {
+      quote: "Finally, a bookstore that understands what security professionals actually need.",
+      name: "James B.",
+      role: "Red Team Lead",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=james"
+    },
+    {
+      quote: "The curated bundles save me so much time when onboarding new analysts.",
+      name: "Amanda W.",
+      role: "SOC Manager",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=amanda"
+    },
+    {
+      quote: "Unbelievable depth of knowledge. The malware analysis books are incredibly detailed.",
+      name: "Robert C.",
+      role: "Reverse Engineer",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=robert"
+    },
+    {
+      quote: "I buy all my certification study guides here. Always up-to-date editions.",
+      name: "Kevin M.",
+      role: "Cyber Student",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=kevin"
+    },
+    {
+      quote: "A treasure trove for anyone serious about cryptography and low-level security.",
+      name: "Dr. Lisa H.",
+      role: "Crypto Researcher",
+      stars: 5,
+      avatar: "https://i.pravatar.cc/150?u=lisa"
     }
   ];
 
@@ -117,19 +180,19 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden pt-16 pb-12 bg-white border-b border-slate-50">
-        {/* Modern Dot-Matrix Grid Background */}
-        <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.2px,transparent_1.2px)] [background-size:24px_24px] opacity-45 pointer-events-none z-0" />
-        
-        {/* Soft Decorative Blurred Spotlights */}
-        <div className="absolute top-0 right-1/4 w-[380px] h-[380px] bg-accent/4 rounded-full blur-[90px] pointer-events-none z-0" />
-        <div className="absolute bottom-4 left-12 w-[240px] h-[240px] bg-slate-100 rounded-full blur-[60px] pointer-events-none z-0 opacity-40" />
-
-        <div className="w-full max-w-[92%] xl:max-w-[1600px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative z-10">
-          {/* Left Text */}
-          <div className="lg:col-span-6 flex flex-col items-start text-left gap-5">
+      <section 
+        className="relative overflow-hidden border-b border-slate-900 min-h-[calc(100vh-80px)] flex items-center"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.7) 100%), url(${heroDarkBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="w-full max-w-[92%] xl:max-w-[1600px] mx-auto px-4 md:px-8 relative z-10 flex justify-center">
+          <div className="flex flex-col items-center text-center gap-7 max-w-5xl">
             {/* Trust Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-50 border border-slate-200/80 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-sm">
               <div className="flex gap-0.5 text-amber-500">
                 <Star className="w-3.5 h-3.5 fill-current" />
                 <Star className="w-3.5 h-3.5 fill-current" />
@@ -137,66 +200,53 @@ export default function Home() {
                 <Star className="w-3.5 h-3.5 fill-current" />
                 <Star className="w-3.5 h-3.5 fill-current" />
               </div>
-              <span className="text-[10px] text-slate-600 font-bold uppercase tracking-wider">
-                Excellent 4.9/5 from <span className="text-slate-900">2,000+ Engineers</span>
+              <span className="text-[10px] text-white font-bold uppercase tracking-wider">
+                Excellent 4.9/5 from <span className="text-slate-300">2,000+ Engineers</span>
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-4xl lg:text-[46px] font-extrabold tracking-tight text-slate-900 leading-[1.18] max-w-xl">
-              From Beginners to Experts <br />
-              We Have the <span className="text-accent">Right Book</span> for Every Security Engineer
+            <h1 className="text-3xl md:text-5xl lg:text-[54px] font-display font-medium text-white leading-[1.15] w-full">
+              From Beginners to Experts We Have the <span className="text-accent font-semibold">Right Book</span> for Every Security Engineer
             </h1>
             
-            <p className="text-sm md:text-base text-slate-500 max-w-lg leading-relaxed font-medium">
+            <p className="text-sm md:text-lg text-slate-300 max-w-3xl leading-relaxed font-medium">
               Explore masterclasses on ethical hacking, penetration testing, network security, cryptography, and reverse engineering.
             </p>
             
-            <div className="flex flex-wrap gap-4 mt-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
               <Link to="/books" className="relative group inline-block">
                 {/* Glowing border/pulse effect behind CTA */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-amber-300 rounded-xl blur opacity-30 group-hover:opacity-70 transition duration-500 animate-pulse"></div>
-                <Button variant="accent" size="lg" className="relative px-8 py-3.5 text-sm uppercase tracking-widest font-extrabold shadow-xl">
+                <Button variant="accent" size="lg" className="relative px-8 py-3.5 text-sm uppercase tracking-widest font-extrabold shadow-xl text-slate-900 border-none">
                   Browse Books <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/categories" >
-                <Button variant="outline" size="lg" className="px-7 py-3 bg-white">
+                <Button variant="outline" size="lg" className="px-7 py-3 bg-white/5 text-white border-white/20 hover:bg-white/10 hover:text-white backdrop-blur-md">
                   Explore Categories
                 </Button>
               </Link>
-            </div>
-          </div>
-
-          {/* Right Editorial Image */}
-          <div className="lg:col-span-6 w-full flex justify-center relative z-20">
-            <div className="relative w-full max-w-[500px] hover:scale-[1.02] transition-transform duration-700 ease-out">
-              <div className="absolute inset-0 bg-accent/10 rounded-[40px] blur-[80px] -z-10" />
-              <img 
-                src={heroEditorialImage} 
-                alt="CyberShelf Premium Book Stack" 
-                className="w-full h-auto object-contain drop-shadow-2xl"
-              />
             </div>
           </div>
         </div>
       </section>
 
       {/* 1.5 TRUSTED BY CORPORATE MARQUEE */}
-      <section className="py-8 bg-sky-50 border-b border-sky-100 overflow-hidden relative">
-        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-sky-50 to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-sky-50 to-transparent z-10 pointer-events-none" />
+      <section className="py-8 bg-[#03132B] border-b border-white/5 overflow-hidden relative">
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#03132B] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#03132B] to-transparent z-10 pointer-events-none" />
         
         <div className="flex items-center gap-12 whitespace-nowrap animate-marquee">
           {/* We duplicate the list twice to create a seamless infinite scrolling effect */}
           {[1, 2].map((set) => (
-            <div key={set} className="flex items-center gap-16 text-sky-400/60 font-bold text-xl md:text-2xl tracking-tighter uppercase px-8">
-              <span className="hover:text-sky-700 transition-colors duration-300">Google</span>
-              <span className="hover:text-sky-700 transition-colors duration-300">Microsoft</span>
-              <span className="hover:text-sky-700 transition-colors duration-300">CrowdStrike</span>
-              <span className="hover:text-sky-700 transition-colors duration-300">Cloudflare</span>
-              <span className="hover:text-sky-700 transition-colors duration-300">Palo Alto</span>
-              <span className="hover:text-sky-700 transition-colors duration-300">Okta</span>
-              <span className="hover:text-sky-700 transition-colors duration-300">Cisco</span>
+            <div key={set} className="flex items-center gap-16 text-slate-400/60 font-bold text-xl md:text-2xl tracking-tighter uppercase px-8">
+              <span className="hover:text-white transition-colors duration-300">Fortune 500 Tech</span>
+              <span className="hover:text-white transition-colors duration-300">Global Banks</span>
+              <span className="hover:text-white transition-colors duration-300">Gov Agencies</span>
+              <span className="hover:text-white transition-colors duration-300">Defense Contractors</span>
+              <span className="hover:text-white transition-colors duration-300">Top Universities</span>
+              <span className="hover:text-white transition-colors duration-300">10K+ Engineers</span>
+              <span className="hover:text-white transition-colors duration-300">Enterprise SOCs</span>
             </div>
           ))}
         </div>
@@ -256,143 +306,196 @@ export default function Home() {
       </section>
 
       {/* 2.5. THE ENGINEER'S ADVANTAGE */}
-      <section className="py-20 bg-slate-50 border-y border-slate-200 relative overflow-hidden">
-        {/* Background elements */}
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] pointer-events-none" />
-        
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-extrabold text-slate-900 tracking-tight">The Engineer's Advantage</h2>
-            <p className="text-slate-500 mt-3 text-sm leading-relaxed font-medium">Why thousands of security professionals choose CipherShelf for their continued education.</p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-10 h-10 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Curated Selection</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">Hand-picked and reviewed by active security researchers.</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-10 h-10 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600">
-                <Sparkles className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Instant Digital</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">Get DRM-free PDF & EPUB versions instantly upon purchase.</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
-                <Truck className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">Secure Shipping</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">Packed with extreme care and shipped globally with tracking.</p>
-              </div>
-            </div>
-
-            <div className="bg-white p-7 rounded-[20px] border border-slate-100 shadow-xl shadow-slate-200/30 flex flex-col gap-4 hover:-translate-y-1 transition-transform duration-300">
-              <div className="w-10 h-10 bg-amber-50 rounded-xl flex items-center justify-center text-amber-600">
-                <RotateCcw className="w-5 h-5" />
-              </div>
-              <div>
-                <h4 className="font-extrabold text-slate-900 text-base mb-1.5">7-Day Returns</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">Return any physical book in original condition for a full refund.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. SHOP BY CATEGORY SECTION */}
-      <section className="py-24 bg-slate-950 relative overflow-hidden">
-        {/* Premium grid background */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0a_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-        
-        {/* Soft glowing ambient lights */}
-        <div className="absolute top-[-20%] right-[-10%] w-[600px] h-[600px] bg-accent/15 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
-        <div className="absolute bottom-[-20%] left-[-10%] w-[600px] h-[600px] bg-indigo-500/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
-
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <div className="mb-14 max-w-md mx-auto">
-            <h2 className="text-3xl font-extrabold text-white tracking-tight">Shop by Category</h2>
-            <div className="h-1 w-16 bg-accent mx-auto mt-4 rounded-full" />
-            <p className="text-sm text-slate-400 font-medium mt-4 leading-relaxed">
-              Find the perfect playbook from our handpicked intelligence categories
+      {/* 2.5. THE ENGINEER'S ADVANTAGE */}
+      <section className="pt-12 pb-16 bg-slate-50 relative">
+        <div className="w-full max-w-[92%] xl:max-w-[1500px] mx-auto px-4 md:px-8">
+          
+          {/* HEADING */}
+          <div className="flex flex-col items-center text-center max-w-[650px] mx-auto mb-10">
+            <h2 className="text-2xl md:text-3xl font-display font-semibold text-slate-900 tracking-tight mb-2">
+              The Engineer's Advantage
+            </h2>
+            <p className="text-[14px] md:text-[15px] text-slate-500 font-normal leading-relaxed">
+              Why thousands of security professionals choose CipherShelf for their continued education.
             </p>
           </div>
 
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-100px' }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-12"
-          >
-            {categories.map((cat, idx) => (
-              <motion.div key={idx} variants={itemVariants}>
-                <Link 
-                  to={`/books?category=${encodeURIComponent(cat.name)}`} className="group flex flex-col items-center justify-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-[24px] shadow-2xl hover:shadow-[0_0_40px_-10px_rgba(181,138,84,0.3)] hover:-translate-y-2 hover:border-accent/40 hover:bg-white/10 transition-all duration-500 ease-out relative overflow-hidden"
-                >
-                  {/* Hover gradient shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-accent/0 via-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                  
-                  {/* Icon container */}
-                  <div className="w-16 h-16 rounded-2xl border border-white/10 bg-black/40 text-slate-300 flex items-center justify-center mb-5 group-hover:bg-accent/20 group-hover:text-accent group-hover:border-accent/50 transition-all duration-500 shadow-inner">
-                    {cat.icon}
-                  </div>
-                  
-                  <h3 className="font-extrabold text-white text-[13px] tracking-tight transition-colors duration-300 leading-tight min-h-[2.5rem] flex items-center text-center">
-                    {cat.name}
-                  </h3>
-                  
-                  <span className="text-[10px] text-accent/80 font-bold uppercase tracking-widest mt-2">
-                    {cat.count}
-                  </span>
-                </Link>
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* FEATURE CARDS */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 xl:gap-6 items-stretch">
+            
+            {/* CARD 1 */}
+            <div className="group bg-white rounded-2xl p-6 xl:p-8 ring-1 ring-slate-200/50 shadow-[0_2px_12px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgb(0,0,0,0.06)] hover:ring-slate-200 transition-all duration-300 flex items-start gap-4 xl:gap-5">
+              <div className="flex-shrink-0 w-12 h-12 xl:w-14 xl:h-14 rounded-[14px] bg-indigo-50/80 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors duration-300 mt-0.5">
+                <ShieldCheck className="w-6 h-6 xl:w-[26px] xl:h-[26px]" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="text-[15px] xl:text-[17px] font-semibold text-slate-900 mb-1.5 tracking-tight">
+                  Curated Library
+                </h3>
+                <p className="text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed pr-1">
+                  Premium cybersecurity literature hand-picked by active industry experts.
+                </p>
+              </div>
+            </div>
 
-          <Link to="/categories" className="inline-flex items-center justify-center px-10 py-4 bg-accent/10 border border-accent/30 text-accent hover:bg-accent hover:text-slate-950 text-[11px] font-extrabold tracking-[0.2em] uppercase rounded-full transition-all duration-500 hover:shadow-[0_0_30px_0px_rgba(181,138,84,0.4)] hover:-translate-y-1">
-            Explore All Intelligence
-          </Link>
+            {/* CARD 2 */}
+            <div className="group bg-white rounded-2xl p-6 xl:p-8 ring-1 ring-slate-200/50 shadow-[0_2px_12px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgb(0,0,0,0.06)] hover:ring-slate-200 transition-all duration-300 flex items-start gap-4 xl:gap-5">
+              <div className="flex-shrink-0 w-12 h-12 xl:w-14 xl:h-14 rounded-[14px] bg-emerald-50/80 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 mt-0.5">
+                <Zap className="w-6 h-6 xl:w-[26px] xl:h-[26px]" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="text-[15px] xl:text-[17px] font-semibold text-slate-900 mb-1.5 tracking-tight">
+                  Instant Formats
+                </h3>
+                <p className="text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed pr-1">
+                  Immediate DRM-free PDF and EPUB downloads straight to your device.
+                </p>
+              </div>
+            </div>
+
+            {/* CARD 3 */}
+            <div className="group bg-white rounded-2xl p-6 xl:p-8 ring-1 ring-slate-200/50 shadow-[0_2px_12px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgb(0,0,0,0.06)] hover:ring-slate-200 transition-all duration-300 flex items-start gap-4 xl:gap-5">
+              <div className="flex-shrink-0 w-12 h-12 xl:w-14 xl:h-14 rounded-[14px] bg-blue-50/80 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300 mt-0.5">
+                <Lock className="w-6 h-6 xl:w-[26px] xl:h-[26px]" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="text-[15px] xl:text-[17px] font-semibold text-slate-900 mb-1.5 tracking-tight">
+                  Global Shipping
+                </h3>
+                <p className="text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed pr-1">
+                  Fast, fully tracked worldwide delivery for all physical hardcovers.
+                </p>
+              </div>
+            </div>
+
+            {/* CARD 4 */}
+            <div className="group bg-white rounded-2xl p-6 xl:p-8 ring-1 ring-slate-200/50 shadow-[0_2px_12px_rgb(0,0,0,0.02)] hover:shadow-[0_8px_24px_rgb(0,0,0,0.06)] hover:ring-slate-200 transition-all duration-300 flex items-start gap-4 xl:gap-5">
+              <div className="flex-shrink-0 w-12 h-12 xl:w-14 xl:h-14 rounded-[14px] bg-orange-50/80 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300 mt-0.5">
+                <RotateCcw className="w-6 h-6 xl:w-[26px] xl:h-[26px]" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col">
+                <h3 className="text-[15px] xl:text-[17px] font-semibold text-slate-900 mb-1.5 tracking-tight">
+                  Risk-Free Returns
+                </h3>
+                <p className="text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed pr-1">
+                  Not satisfied? Return any physical book within <span className="font-semibold text-orange-600">7 days</span> for a full refund.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      {/* 3. SHOP BY CATEGORY SECTION */}
+      <section className="py-24 bg-[#FAFAFA] relative border-b border-slate-200">
+        <div className="w-full max-w-[95%] xl:max-w-[1600px] mx-auto px-4 md:px-8">
+          
+          <div className="flex flex-col lg:flex-row gap-16 xl:gap-24 items-start">
+            
+            {/* LEFT COLUMN: EDITORIAL HEADER */}
+            <div className="w-full lg:w-[40%] flex flex-col items-start text-left lg:sticky lg:top-32">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 border border-indigo-100/50 text-indigo-700 text-xs font-bold uppercase tracking-widest mb-8 shadow-sm">
+                <Sparkles className="w-3.5 h-3.5" />
+                Domains of Expertise
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-slate-900 tracking-tighter mb-6 leading-[1.05]">
+                Master Every Attack Surface.
+              </h2>
+              <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10">
+                We don't just sell books. We curate specialized playbooks for modern security teams. From low-level cryptography to advanced red-teaming, find the exact knowledge you need to stay ahead of zero-days.
+              </p>
+              <Link 
+                to="/categories" 
+                className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-semibold text-lg text-slate-900 bg-gradient-to-r from-[#F5D372] to-[#E2A62B] hover:from-[#F0C95C] hover:to-[#D4981C] hover:shadow-[0_8px_20px_rgba(226,166,43,0.3)] transition-all duration-300 group"
+              >
+                Explore All Categories 
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+
+            {/* RIGHT COLUMN: PREMIUM GRID */}
+            <div className="w-full lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-6">
+              {categories.map((cat, idx) => (
+                <motion.div key={idx} variants={itemVariants}>
+                  <Link 
+                    to={`/books?category=${encodeURIComponent(cat.name)}`} 
+                    className="group relative flex flex-col items-start p-8 xl:p-10 bg-white rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-[0_20px_40px_rgb(0,0,0,0.06)] hover:border-slate-300 transition-all duration-500 hover:-translate-y-1"
+                  >
+                    {/* Glowing Background Orb on Hover */}
+                    <div className="absolute top-0 right-0 w-48 h-48 bg-blue-50 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+                    
+                    <div className="relative z-10 w-full">
+                      <div className="w-14 h-14 rounded-[16px] bg-gradient-to-br from-blue-500 to-emerald-400 flex items-center justify-center text-white mb-10 group-hover:scale-110 group-hover:shadow-[0_8px_20px_rgba(59,130,246,0.3)] transition-all duration-500">
+                        {cat.icon}
+                      </div>
+                      
+                      <div className="flex flex-col">
+                        <h3 className="text-[22px] font-bold text-slate-900 tracking-tight mb-2 group-hover:text-blue-600 transition-colors duration-300">
+                          {cat.name}
+                        </h3>
+                        <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest">
+                          {cat.count} resources
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+          </div>
         </div>
       </section>
 
       {/* 4. FEATURED BOOKS SECTION */}
-      <section className="py-16 border-t border-slate-100 bg-slate-50/20">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 text-left">
-            <div>
-              <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">Featured Books</h2>
-              <p className="text-xs text-slate-500 font-semibold mt-1">
-                Best selling and top rated books by our readers
-              </p>
+      <section className="py-24 border-t border-slate-200 bg-white overflow-hidden flex flex-col">
+        <div className="w-full max-w-[95%] xl:max-w-[1600px] mx-auto px-4 md:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
+              <Star className="w-3.5 h-3.5 text-amber-500" />
+              Top Rated
             </div>
-            <Link to="/books" className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-slate-900 transition-colors uppercase tracking-wider">
-              View All Books <ArrowRight className="w-3.5 h-3.5" />
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tighter mb-4">
+              Featured Releases
+            </h2>
+            <p className="text-lg text-slate-500 leading-relaxed">
+              The most critical new playbooks and best-sellers, trusted by thousands of security teams globally.
+            </p>
+          </div>
+          <div className="flex items-center gap-4 hidden sm:flex">
+            <Link to="/books" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-200 text-slate-700 font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all">
+              View Entire Library
             </Link>
           </div>
+        </div>
 
+        <div className="w-full max-w-[95%] xl:max-w-[1600px] mx-auto px-4 md:px-8">
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-100px' }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5"
+            className="flex gap-6 overflow-x-auto pb-12 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
           >
             {featuredBooks.map((book) => (
-              <motion.div key={book.id} variants={itemVariants}>
+              <motion.div 
+                key={book.id} 
+                variants={itemVariants}
+                className="w-[85vw] sm:w-[340px] md:w-[320px] lg:w-[300px] xl:w-[320px] flex-shrink-0 snap-start"
+              >
                 <BookCard book={book} />
               </motion.div>
             ))}
+            
+            {/* View All Card */}
+            <motion.div variants={itemVariants} className="w-[200px] flex-shrink-0 snap-start flex items-center justify-center p-6">
+              <Link to="/books" className="group flex flex-col items-center gap-4 text-slate-400 hover:text-indigo-600 transition-colors">
+                <div className="w-20 h-20 rounded-full bg-slate-50 border-2 border-dashed border-slate-200 group-hover:border-indigo-200 group-hover:bg-indigo-50 flex items-center justify-center transition-all duration-300">
+                  <ArrowRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
+                </div>
+                <span className="font-bold uppercase tracking-widest text-sm">See All Books</span>
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </section>
@@ -414,7 +517,7 @@ export default function Home() {
                 Security Operations Deal
               </span>
               
-              <h3 className="text-2xl md:text-3xl lg:text-[38px] font-extrabold text-white leading-[1.15] tracking-tight max-w-lg">
+              <h3 className="text-2xl md:text-3xl lg:text-[38px] font-display font-extrabold text-white leading-[1.15] tracking-tight max-w-lg">
                 Upgrade Your Library <br />
                 Save Up to <span className="text-accent">25% Off</span>
               </h3>
@@ -453,80 +556,99 @@ export default function Home() {
       </section>
 
       {/* 6. WHAT OUR READERS SAY (TESTIMONIALS) */}
-      <section className="py-16 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <div className="mb-12 max-w-sm mx-auto">
-            <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">What Our Readers Say</h2>
-            <div className="h-0.5 w-12 bg-accent mx-auto mt-2" />
+      <section className="py-24 bg-white border-t border-slate-100 overflow-hidden flex flex-col">
+        <div className="w-full max-w-[95%] xl:max-w-[1400px] mx-auto px-4 md:px-8 mb-12 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-8">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tighter mb-4">
+              Trusted by the best.
+            </h2>
+            <p className="text-lg text-slate-500 leading-relaxed">
+              Security professionals rely on CipherShelf for their critical knowledge.
+            </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            {testimonials.map((test, idx) => (
-              <div 
-                key={idx} 
-                className="p-6 bg-white border border-slate-100 rounded-[20px] shadow-soft flex flex-col justify-between gap-6"
-              >
-                <div className="flex flex-col gap-3">
-                  <div className="flex gap-0.5 text-amber-400">
-                    {Array.from({ length: test.stars }).map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-xs text-slate-600 leading-relaxed italic">
-                    "{test.quote}"
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-3 pt-3 border-t border-slate-50">
-                  <div className="w-8 h-8 rounded-full bg-slate-900 text-white font-bold text-xs flex items-center justify-center">
-                    {test.avatar}
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-xs font-bold text-slate-950">{test.name}</span>
-                    <span className="text-[10px] text-slate-400 font-semibold">{test.role}</span>
-                  </div>
-                </div>
-              </div>
+          
+          {/* Dots Navigation */}
+          <div className="flex gap-2">
+            {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActiveTestimonial(idx)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${activeTestimonial === idx ? 'bg-indigo-600 w-8' : 'bg-slate-200 hover:bg-slate-300'}`}
+                aria-label={`Go to testimonial slide ${idx + 1}`}
+              />
             ))}
+          </div>
+        </div>
+
+        <div className="w-full max-w-[95%] xl:max-w-[1400px] mx-auto px-4 md:px-8">
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-700 ease-in-out"
+              style={{ transform: `translateX(-${activeTestimonial * 100}%)` }}
+            >
+              {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, slideIndex) => (
+                <div key={slideIndex} className="min-w-full w-full flex-shrink-0 grid grid-cols-1 md:grid-cols-3 gap-6 px-2">
+                  {testimonials.slice(slideIndex * 3, slideIndex * 3 + 3).map((test, idx) => (
+                    <div key={idx} className="bg-[#FAFAFA] border border-slate-200 hover:border-slate-300 hover:shadow-lg transition-all duration-300 rounded-[28px] p-8 md:p-10 flex flex-col justify-between h-full">
+                      <div className="flex gap-1 text-[#E2A62B] mb-8">
+                        {Array.from({ length: test.stars }).map((_, i) => (
+                          <Star key={i} className="w-5 h-5 fill-current" />
+                        ))}
+                      </div>
+                      <h3 className="text-lg md:text-xl font-medium text-slate-900 leading-[1.6] tracking-tight mb-12">
+                        "{test.quote}"
+                      </h3>
+                      <div className="flex items-center gap-4 mt-auto">
+                        <img src={test.avatar} alt={test.name} className="w-12 h-12 rounded-full border border-slate-200" />
+                        <div className="text-left">
+                          <div className="font-bold text-slate-900">{test.name}</div>
+                          <div className="text-xs font-bold text-indigo-600 uppercase tracking-widest mt-1">{test.role}</div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* (Old Advantage Section Removed) */}
-
-
       {/* 8. NEWSLETTER / STAY UPDATED */}
-      <section className="py-12 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="bg-slate-50 border border-slate-100 rounded-[24px] p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8 text-left">
-            <div className="flex gap-4 items-start max-w-lg">
-              <div className="w-12 h-12 rounded-2xl bg-white border border-slate-200/50 flex-shrink-0 flex items-center justify-center text-accent shadow-sm">
-                <Mail className="w-5.5 h-5.5 stroke-[1.8]" />
+      <section className="pt-16 bg-white flex flex-col items-center">
+        <div className="w-full max-w-7xl px-6">
+          <div className="bg-[#091224] rounded-t-[32px] p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 text-left shadow-[0_-10px_40px_rgba(0,0,0,0.05)] relative overflow-hidden">
+            {/* Ambient inner glow for the card */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+            
+            <div className="flex gap-5 items-start max-w-lg relative z-10">
+              <div className="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex-shrink-0 flex items-center justify-center text-white shadow-sm backdrop-blur-sm">
+                <Mail className="w-6 h-6 stroke-[1.8]" />
               </div>
-              <div className="flex flex-col gap-1">
-                <h3 className="font-extrabold text-slate-900 text-base md:text-lg">Stay Updated</h3>
-                <p className="text-xs text-slate-500 leading-relaxed font-medium">
+              <div className="flex flex-col gap-2">
+                <h3 className="font-extrabold text-white text-xl md:text-2xl">Stay Updated</h3>
+                <p className="text-sm text-slate-300 leading-relaxed font-medium">
                   Get the latest book releases, offers and cybersecurity insights straight to your inbox.
                 </p>
               </div>
             </div>
 
-            <form onSubmit={handleSubscribe} className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+            <form onSubmit={handleSubscribe} className="w-full md:w-auto flex flex-col sm:flex-row gap-3 relative z-10">
               <input
                 type="email"
                 required
                 placeholder="Enter your email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full sm:w-64 bg-white border border-slate-200 text-xs rounded-xl px-4 py-3 outline-none focus:border-slate-400 transition-colors"
+                className="w-full sm:w-72 bg-[#091224]/50 border border-white/10 text-sm text-white placeholder-slate-500 rounded-xl px-5 py-4 outline-none focus:border-white/30 transition-colors"
               />
-              <Button type="submit" variant="accent" className="py-3 px-6 text-xs font-bold uppercase tracking-wider whitespace-nowrap">
+              <Button type="submit" variant="accent" className="py-4 px-8 text-sm font-bold uppercase tracking-wider whitespace-nowrap bg-indigo-600 hover:bg-indigo-500 text-white border-none shadow-lg shadow-indigo-600/20">
                 Subscribe
               </Button>
             </form>
           </div>
           {subscribed && (
-            <span className="text-xs text-emerald-600 font-semibold mt-3 block animate-fade-in text-center">
+            <span className="text-sm text-emerald-400 font-semibold mt-4 block animate-fade-in text-center pb-4 relative z-10">
               ✓ Subscribed successfully! Thank you.
             </span>
           )}

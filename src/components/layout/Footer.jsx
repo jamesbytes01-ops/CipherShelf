@@ -27,7 +27,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#0E243F] border-t-2 border-transparent [border-image:linear-gradient(to_right,transparent,#B58A54,transparent)_1] text-slate-400 mt-auto relative">
+    <footer className="bg-[#091224] border-t-2 border-transparent [border-image:linear-gradient(to_right,transparent,#B58A54,transparent)_1] text-slate-400 mt-auto relative">
       {/* Soft ambient glow on top of footer */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent shadow-[0_0_20px_rgba(181,138,84,0.5)]"></div>
       {/* Top Section */}
