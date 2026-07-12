@@ -18,10 +18,7 @@ const Blog = lazy(() => import('./pages/Blog'));
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const FAQ = lazy(() => import('./pages/FAQ'));
 
-// Admin Pages
-const AdminLayout = lazy(() => import('./admin/layout/AdminLayout').then(m => ({ default: m.AdminLayout })));
-const Dashboard = lazy(() => import('./admin/pages/Dashboard').then(m => ({ default: m.Dashboard })));
-const BooksManagement = lazy(() => import('./admin/pages/Books').then(m => ({ default: m.BooksManagement })));
+// Admin Pages removed in favor of Decap CMS
 
 // Storefront Wrapper
 function StorefrontLayout({ children }) {
@@ -56,20 +53,6 @@ export default function App() {
       <CartProvider>
         <Suspense fallback={<PageLoader />}>
           <Routes>
-            {/* Admin Routes (No storefront Navbar/Footer) */}
-            <Route path="/admin" element={<AdminLayout />}>
-              <Route index element={<Dashboard />} />
-              <Route path="books" element={<BooksManagement />} />
-              <Route path="categories" element={<div className="p-8">Categories (Coming Soon)</div>} />
-              <Route path="blog" element={<div className="p-8">Blog CMS (Coming Soon)</div>} />
-              <Route path="pages" element={<div className="p-8">Pages (Coming Soon)</div>} />
-              <Route path="builder" element={<div className="p-8">Homepage Builder (Coming Soon)</div>} />
-              <Route path="orders" element={<div className="p-8">Orders (Coming Soon)</div>} />
-              <Route path="customers" element={<div className="p-8">Customers (Coming Soon)</div>} />
-              <Route path="analytics" element={<div className="p-8">Analytics (Coming Soon)</div>} />
-              <Route path="settings" element={<div className="p-8">Settings (Coming Soon)</div>} />
-            </Route>
-
             {/* Storefront Routes */}
             <Route path="*" element={
               <StorefrontLayout>

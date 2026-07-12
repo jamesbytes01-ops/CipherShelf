@@ -72,84 +72,84 @@ export default function Home() {
       name: "Rohit Sharma",
       role: "Security Analyst",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=rohit"
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
       quote: "Great prices, original books and fast delivery. My go-to store for all tech books!",
       name: "Sneha Verma",
       role: "Penetration Tester",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=sneha"
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg"
     },
     {
       quote: "I found books here that were out of stock everywhere else. Highly recommended!",
       name: "Ankit Patel",
       role: "Cybersecurity Student",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=ankit"
+      avatar: "https://randomuser.me/api/portraits/men/22.jpg"
     },
     {
       quote: "An essential resource for any blue teamer. The defensive playbooks are top notch.",
       name: "David K.",
       role: "Security Engineer",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=david"
+      avatar: "https://randomuser.me/api/portraits/men/60.jpg"
     },
     {
       quote: "I passed my OSCP thanks to the materials I found here. Highly recommend!",
       name: "Sarah L.",
       role: "Penetration Tester",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=sarah"
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg"
     },
     {
       quote: "The quality of these books is unmatched. Fast shipping and great customer service.",
       name: "Michael T.",
       role: "CISO",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=michael"
+      avatar: "https://randomuser.me/api/portraits/men/75.jpg"
     },
     {
       quote: "CipherShelf is my secret weapon for staying ahead of the latest threats.",
       name: "Elena R.",
       role: "Threat Hunter",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=elena"
+      avatar: "https://randomuser.me/api/portraits/women/33.jpg"
     },
     {
       quote: "Finally, a bookstore that understands what security professionals actually need.",
       name: "James B.",
       role: "Red Team Lead",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=james"
+      avatar: "https://randomuser.me/api/portraits/men/82.jpg"
     },
     {
       quote: "The curated bundles save me so much time when onboarding new analysts.",
       name: "Amanda W.",
       role: "SOC Manager",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=amanda"
+      avatar: "https://randomuser.me/api/portraits/women/12.jpg"
     },
     {
       quote: "Unbelievable depth of knowledge. The malware analysis books are incredibly detailed.",
       name: "Robert C.",
       role: "Reverse Engineer",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=robert"
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg"
     },
     {
       quote: "I buy all my certification study guides here. Always up-to-date editions.",
       name: "Kevin M.",
       role: "Cyber Student",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=kevin"
+      avatar: "https://randomuser.me/api/portraits/men/86.jpg"
     },
     {
       quote: "A treasure trove for anyone serious about cryptography and low-level security.",
       name: "Dr. Lisa H.",
       role: "Crypto Researcher",
       stars: 5,
-      avatar: "https://i.pravatar.cc/150?u=lisa"
+      avatar: "https://randomuser.me/api/portraits/women/26.jpg"
     }
   ];
 
@@ -557,8 +557,8 @@ export default function Home() {
 
       {/* 6. WHAT OUR READERS SAY (TESTIMONIALS) */}
       <section className="py-24 bg-white border-t border-slate-100 overflow-hidden flex flex-col">
-        <div className="w-full max-w-[95%] xl:max-w-[1400px] mx-auto px-4 md:px-8 mb-12 flex flex-col md:flex-row items-center text-center md:text-left justify-between gap-8">
-          <div className="max-w-2xl">
+        <div className="w-full max-w-3xl mx-auto px-4 md:px-8 mb-12 flex flex-col items-center text-center gap-6">
+          <div>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tighter mb-4">
               Trusted by the best.
             </h2>
@@ -568,7 +568,7 @@ export default function Home() {
           </div>
           
           {/* Dots Navigation */}
-          <div className="flex gap-2">
+          <div className="flex gap-2 mt-2">
             {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, idx) => (
               <button
                 key={idx}
