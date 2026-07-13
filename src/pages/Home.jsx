@@ -615,9 +615,9 @@ export default function Home() {
       </section>
 
       {/* 8. NEWSLETTER / STAY UPDATED */}
-      <section className="pt-16 bg-white flex flex-col items-center">
+      <section className="py-16 md:py-24 bg-white flex flex-col items-center">
         <div className="w-full max-w-7xl px-6">
-          <div className="bg-[#091224] rounded-t-[32px] p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 text-left shadow-[0_-10px_40px_rgba(0,0,0,0.05)] relative overflow-hidden">
+          <div className="bg-[#091224] rounded-[32px] p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 text-left shadow-2xl relative overflow-hidden">
             {/* Ambient inner glow for the card */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none" />
             
@@ -633,25 +633,27 @@ export default function Home() {
               </div>
             </div>
 
-            <form onSubmit={handleSubscribe} className="w-full md:w-auto flex flex-col sm:flex-row gap-3 relative z-10">
-              <input
-                type="email"
-                required
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full sm:w-72 bg-[#091224]/50 border border-white/10 text-sm text-white placeholder-slate-500 rounded-xl px-5 py-4 outline-none focus:border-white/30 transition-colors"
-              />
-              <Button type="submit" variant="accent" className="py-4 px-8 text-sm font-bold uppercase tracking-wider whitespace-nowrap bg-indigo-600 hover:bg-indigo-500 text-white border-none shadow-lg shadow-indigo-600/20">
-                Subscribe
-              </Button>
-            </form>
+            <div className="w-full md:w-auto flex flex-col gap-2.5 relative z-10">
+              <form onSubmit={handleSubscribe} className="w-full md:w-auto flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full sm:w-72 bg-[#091224]/50 border border-white/10 text-sm text-white placeholder-slate-500 rounded-xl px-5 py-4 outline-none focus:border-white/30 transition-colors"
+                />
+                <Button type="submit" variant="accent" className="py-4 px-8 text-sm font-bold uppercase tracking-wider whitespace-nowrap bg-indigo-600 hover:bg-indigo-500 text-white border-none shadow-lg shadow-indigo-600/20">
+                  Subscribe
+                </Button>
+              </form>
+              {subscribed && (
+                <span className="text-sm text-emerald-400 font-semibold mt-2 block animate-fade-in">
+                  ✓ Subscribed successfully! Thank you.
+                </span>
+              )}
+            </div>
           </div>
-          {subscribed && (
-            <span className="text-sm text-emerald-400 font-semibold mt-4 block animate-fade-in text-center pb-4 relative z-10">
-              ✓ Subscribed successfully! Thank you.
-            </span>
-          )}
         </div>
       </section>
     </div>
