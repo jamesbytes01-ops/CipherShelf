@@ -387,7 +387,7 @@ export default function Home() {
         </div>
       </section>
       {/* 3. SHOP BY CATEGORY SECTION */}
-      <section className="py-24 bg-[#FAFAFA] relative border-b border-slate-200">
+      <section className="pt-24 pb-16 bg-[#FAFAFA] relative border-b border-slate-200">
         <div className="w-full max-w-[95%] xl:max-w-[1600px] mx-auto px-4 md:px-8">
           
           <div className="flex flex-col lg:flex-row gap-16 xl:gap-24 items-start">
@@ -448,7 +448,7 @@ export default function Home() {
       </section>
 
       {/* 4. FEATURED BOOKS SECTION */}
-      <section className="py-24 border-t border-slate-200 bg-white overflow-hidden flex flex-col">
+      <section className="pt-16 pb-24 bg-white overflow-hidden flex flex-col">
         <div className="w-full max-w-[95%] xl:max-w-[1600px] mx-auto px-4 md:px-8 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 text-slate-800 text-xs font-bold uppercase tracking-widest mb-6 shadow-sm">
@@ -556,7 +556,7 @@ export default function Home() {
       </section>
 
       {/* 6. WHAT OUR READERS SAY (TESTIMONIALS) */}
-      <section className="py-24 bg-white border-t border-slate-100 overflow-hidden flex flex-col">
+      <section className="pt-24 pb-12 bg-white border-t border-slate-100 overflow-hidden flex flex-col">
         <div className="w-full max-w-3xl mx-auto px-4 md:px-8 mb-12 flex flex-col items-center text-center gap-6">
           <div>
             <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tighter mb-4">
@@ -615,7 +615,7 @@ export default function Home() {
       </section>
 
       {/* 8. NEWSLETTER / STAY UPDATED */}
-      <section className="py-16 md:py-24 bg-white flex flex-col items-center">
+      <section className="pt-12 pb-24 bg-white flex flex-col items-center">
         <div className="w-full max-w-7xl px-6">
           <div className="bg-[#091224] rounded-[32px] p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 text-left shadow-2xl relative overflow-hidden">
             {/* Ambient inner glow for the card */}
