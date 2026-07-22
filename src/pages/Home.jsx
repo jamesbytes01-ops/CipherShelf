@@ -205,8 +205,8 @@ export default function Home() {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-[54px] font-display font-medium text-white leading-[1.15] w-full">
-              From Beginners to Experts We Have the <span className="text-accent font-semibold">Right Book</span> for Every Security Engineer
+            <h1 className="text-2xl md:text-4xl lg:text-[48px] font-display font-light text-white leading-[1.15] w-full">
+              From Beginners to Experts We Have the <span className="text-accent font-normal">Right Book</span> for Every Security Engineer
             </h1>
             
             <p className="text-sm md:text-lg text-slate-300 max-w-3xl leading-relaxed font-medium">
@@ -312,7 +312,7 @@ export default function Home() {
           
           {/* HEADING */}
           <div className="flex flex-col items-center text-center max-w-[650px] mx-auto mb-10">
-            <h2 className="text-2xl md:text-3xl font-display font-semibold text-slate-900 tracking-tight mb-2">
+            <h2 className="text-xl md:text-2xl font-display font-normal text-slate-900 tracking-tight mb-2">
               The Engineer's Advantage
             </h2>
             <p className="text-[14px] md:text-[15px] text-slate-500 font-normal leading-relaxed">
@@ -398,7 +398,7 @@ export default function Home() {
                 <Sparkles className="w-3.5 h-3.5" />
                 Domains of Expertise
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-slate-900 tracking-tighter mb-6 leading-[1.05]">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-normal text-slate-900 tracking-tighter mb-6 leading-[1.05]">
                 Master Every Attack Surface.
               </h2>
               <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10">
@@ -455,7 +455,7 @@ export default function Home() {
               <Star className="w-3.5 h-3.5 text-amber-500" />
               Top Rated
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tighter mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-medium text-slate-900 tracking-tighter mb-4">
               Featured Releases
             </h2>
             <p className="text-lg text-slate-500 leading-relaxed">
@@ -517,7 +517,7 @@ export default function Home() {
                 Security Operations Deal
               </span>
               
-              <h3 className="text-2xl md:text-3xl lg:text-[38px] font-display font-extrabold text-white leading-[1.15] tracking-tight max-w-lg">
+              <h3 className="text-xl md:text-2xl lg:text-[32px] font-display font-semibold text-white leading-[1.15] tracking-tight max-w-lg">
                 Upgrade Your Library <br />
                 Save Up to <span className="text-accent">25% Off</span>
               </h3>
@@ -559,7 +559,7 @@ export default function Home() {
       <section className="pt-24 pb-12 bg-white border-t border-slate-100 overflow-hidden flex flex-col">
         <div className="w-full max-w-3xl mx-auto px-4 md:px-8 mb-12 flex flex-col items-center text-center gap-6">
           <div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tighter mb-4">
+            <h2 className="text-3xl md:text-4xl font-display font-medium text-slate-900 tracking-tighter mb-4">
               Trusted by the best.
             </h2>
             <p className="text-lg text-slate-500 leading-relaxed">
@@ -626,7 +626,7 @@ export default function Home() {
                 <Mail className="w-6 h-6 stroke-[1.8]" />
               </div>
               <div className="flex flex-col gap-2">
-                <h3 className="font-extrabold text-white text-xl md:text-2xl">Stay Updated</h3>
+                <h3 className="font-bold text-white text-lg md:text-xl">Stay Updated</h3>
                 <p className="text-sm text-slate-300 leading-relaxed font-medium">
                   Get the latest book releases, offers and cybersecurity insights straight to your inbox.
                 </p>
