@@ -16,7 +16,7 @@ const CATEGORIES = [
   'VPN',
   'Threat Intelligence',
   'Product Reviews',
-  'Cybersecurity Books'
+  'Cybersecurity E-Books'
 ];
 
 export default function Blog() {

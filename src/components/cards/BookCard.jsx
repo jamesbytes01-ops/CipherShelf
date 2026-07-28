@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Star, ShoppingCart, Check } from 'lucide-react';
+import { Star, ShoppingCart, Check, Download } from 'lucide-react';
 import { BookCover } from '../../utils/svgGenerator';
 import { useCart } from '../../context/CartContext';
 
@@ -16,6 +16,19 @@ export function BookCard({ book }) {
     e.preventDefault();
     e.stopPropagation();
     addToCart(book, 1);
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
+  };
+
+  const handleDownload = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const content = `<!DOCTYPE html><html><head><title>${title}</title><style>body{font-family:system-ui,sans-serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.6;color:#333}h1{color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px}.meta{color:#64748b;font-size:1.1rem;margin-bottom:2rem}.watermark{padding:1rem;background:#fef3c7;color:#92400e;border-radius:0.5rem;margin-bottom:2rem;border:1px solid #fcd34d}</style></head><body><div class="watermark"><strong>Demo Version:</strong> This is a simulated e-book preview. Full copyrighted text is not included in this development environment.</div><h1>${title}</h1><div class="meta">By ${author}</div><h2>Chapter 1: Introduction</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><h2>Chapter 2: Getting Started</h2><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p></body></html>`;
+    const blob = new Blob([content], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    
     setIsAdded(true);
     setTimeout(() => setIsAdded(false), 2000);
   };
@@ -89,24 +102,28 @@ export function BookCard({ book }) {
       <div className="mt-4 pt-3 border-t border-slate-50 flex items-center justify-between px-0.5">
         <div className="flex items-baseline gap-2">
           <span className="text-[15px] font-extrabold text-slate-950">
-            ${price.toFixed(2)}
+            {price === 0 ? 'Free' : `$${price.toFixed(2)}`}
           </span>
-          <span className="text-[11px] text-slate-400 line-through font-medium">
-            ${originalPrice.toFixed(2)}
-          </span>
+          {price > 0 && (
+            <span className="text-[11px] text-slate-400 line-through font-medium">
+              ${originalPrice.toFixed(2)}
+            </span>
+          )}
         </div>
 
         <button 
-          onClick={handleQuickAdd} 
+          onClick={price === 0 ? handleDownload : handleQuickAdd} 
           className={`flex items-center justify-center p-2.5 rounded-xl border transition-all duration-300 ease-out ${
             isAdded
               ? 'bg-emerald-50 border-emerald-200 text-emerald-600'
               : 'bg-white border-slate-200 text-slate-600 hover:bg-slate-900 hover:text-white hover:border-slate-900 hover:shadow-[0_5px_15px_-3px_rgba(15,23,42,0.4)] hover:-translate-y-0.5 active:scale-95'
           }`}
-          aria-label={`Add ${title} to cart`}
+          aria-label={price === 0 ? `Download ${title}` : `Add ${title} to cart`}
         >
           {isAdded ? (
             <Check className="w-4 h-4 stroke-[2.5]" />
+          ) : price === 0 ? (
+            <Download className="w-4 h-4 stroke-[1.8]" />
           ) : (
             <ShoppingCart className="w-4 h-4 stroke-[1.8]" />
           )}

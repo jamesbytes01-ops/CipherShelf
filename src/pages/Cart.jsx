@@ -44,8 +44,8 @@ export default function Cart() {
           </p>
         </div>
         <Link to="/books" >
-          <Button variant="accent" size="md">
-            Browse Books
+          <Button variant="primary" size="lg">
+            Browse E-Books
           </Button>
         </Link>
       </div>
@@ -168,8 +168,8 @@ export default function Cart() {
               <span className="text-slate-900 font-semibold">${cartSubtotal.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
-              <span>Secure Shipping</span>
-              <span className="text-emerald-600 font-semibold uppercase tracking-wide text-[10px]">Free Delivery</span>
+              <span>Digital Delivery</span>
+              <span className="text-emerald-600 font-semibold uppercase tracking-wide text-[10px]">Instant</span>
             </div>
             <div className="flex justify-between">
               <span>Security Audited Packaging</span>
@@ -237,7 +237,7 @@ export default function Cart() {
                     <span className="text-base font-extrabold text-slate-950">${cartTotal.toFixed(2)}</span>
                   </div>
 
-                  {/* Shipping name */}
+                  {/* Billing name */}
                   <div className="flex flex-col gap-1.5">
                     <label className="text-[10px] font-bold text-slate-700 uppercase tracking-wider">Full Name</label>
                     <input
@@ -250,9 +250,9 @@ export default function Cart() {
                     />
                   </div>
 
-                  {/* Delivery Address */}
+                  {/* Billing Address */}
                   <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] font-bold text-slate-700 uppercase tracking-wider">Shipping Address</label>
+                    <label className="text-[10px] font-bold text-slate-700 uppercase tracking-wider">Billing Address</label>
                     <input
                       type="text"
                       required
@@ -334,7 +334,7 @@ export default function Cart() {
                     </code>
                   </div>
                   <p className="text-[11px] text-slate-400 max-w-xs mt-1.5 leading-relaxed">
-                    We sent a secure invoice receipt and dispatch tracking codes directly to your provided billing node.
+                    We sent a secure invoice receipt and digital download links directly to your provided billing node.
                   </p>
                   <Button 
                     variant="primary" 

@@ -126,8 +126,8 @@ export default function Books() {
     <div className="max-w-7xl mx-auto px-6 py-12">
       {/* Title */}
       <div className="text-left mb-10">
-        <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">
-          Books Repository
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900 mt-2">
+          E-Books Repository
         </h1>
         <p className="text-sm text-slate-500 mt-1.5 leading-relaxed">
           Search and filter through {booksData.length} premium cybersecurity editions.
@@ -246,10 +246,11 @@ export default function Books() {
         <div className="lg:col-span-3 flex flex-col gap-6">
           {/* Header controls (Sort and mobile filters trigger) */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-100 text-left">
-            <div className="text-xs text-slate-400 font-semibold">
-              Showing <span className="text-slate-900 font-bold">{filteredBooks.length}</span> of {booksData.length} Books
+            <div className="flex items-center gap-4 flex-1">
+              <span className="text-sm font-medium text-slate-500">
+                Showing <span className="text-slate-900 font-bold">{filteredBooks.length}</span> of {booksData.length} E-Books
+              </span>
             </div>
-
             <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto">
               {/* Mobile Filter toggle */}
               <button

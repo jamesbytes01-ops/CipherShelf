@@ -12,8 +12,8 @@ import { BookCard } from '../components/cards/BookCard';
 import { Button } from '../components/ui/Button';
 import { HeroIllustration } from '../components/layout/HeroIllustration';
 import { BookCover } from '../utils/svgGenerator';
-import promoRealBooksImage from '../assets/promo-real-books.png';
 import heroDarkBg from '../assets/hero-bookshelf-even.png';
+const promoRealBooksImage = "https://images.unsplash.com/photo-1544396821-4dd40b938ad3?auto=format&fit=crop&q=80&w=1000";
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -68,14 +68,14 @@ export default function Home() {
   // Testimonials list (12 items for 4 slides)
   const testimonials = [
     {
-      quote: "CyberShelf has the best collection of cybersecurity books. The quality and delivery are excellent.",
+      quote: "CyberShelf has the best collection of cybersecurity e-books. The quality and instant access are excellent.",
       name: "Rohit Sharma",
       role: "Security Analyst",
       stars: 5,
       avatar: "https://randomuser.me/api/portraits/men/32.jpg"
     },
     {
-      quote: "Great prices, original books and fast delivery. My go-to store for all tech books!",
+      quote: "Great prices, original e-books and instant downloads. My go-to store for all tech books!",
       name: "Sneha Verma",
       role: "Penetration Tester",
       stars: 5,
@@ -103,7 +103,7 @@ export default function Home() {
       avatar: "https://randomuser.me/api/portraits/women/68.jpg"
     },
     {
-      quote: "The quality of these books is unmatched. Fast shipping and great customer service.",
+      quote: "The quality of these e-books is unmatched. Instant access and great customer service.",
       name: "Michael T.",
       role: "CISO",
       stars: 5,
@@ -154,13 +154,13 @@ export default function Home() {
   ];
 
   // Category listing shortcuts
-  const categories = [
-    { name: 'Ethical Hacking', icon: <Flame className="w-5 h-5" />, count: '12+ Books' },
-    { name: 'Networking', icon: <Network className="w-5 h-5" />, count: '9+ Books' },
-    { name: 'Penetration Testing', icon: <Terminal className="w-5 h-5" />, count: '11+ Books' },
-    { name: 'Cryptography', icon: <Key className="w-5 h-5" />, count: '7+ Books' },
-    { name: 'Web Security', icon: <Cpu className="w-5 h-5" />, count: '8+ Books' },
-    { name: 'Digital Forensics', icon: <Search className="w-5 h-5" />, count: '6+ Books' }
+  const browseCategories = [
+    { name: 'Ethical Hacking', icon: <Flame className="w-5 h-5" />, count: '12+ E-Books' },
+    { name: 'Networking', icon: <Network className="w-5 h-5" />, count: '9+ E-Books' },
+    { name: 'Penetration Testing', icon: <Terminal className="w-5 h-5" />, count: '11+ E-Books' },
+    { name: 'Cryptography', icon: <Key className="w-5 h-5" />, count: '7+ E-Books' },
+    { name: 'Web Security', icon: <Cpu className="w-5 h-5" />, count: '8+ E-Books' },
+    { name: 'Digital Forensics', icon: <Search className="w-5 h-5" />, count: '6+ E-Books' }
   ];
 
   // Animation variants
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-2xl md:text-4xl lg:text-[48px] font-display font-light text-white leading-[1.15] w-full">
-              From Beginners to Experts We Have the <span className="text-accent font-normal">Right Book</span> for Every Security Engineer
+              From Beginners to Experts We Have the <span className="text-accent font-normal">Right E-Book</span> for Every Security Engineer
             </h1>
             
             <p className="text-sm md:text-lg text-slate-300 max-w-3xl leading-relaxed font-medium">
@@ -217,8 +217,8 @@ export default function Home() {
               <Link to="/books" className="relative group inline-block">
                 {/* Glowing border/pulse effect behind CTA */}
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-amber-300 rounded-xl blur opacity-30 group-hover:opacity-70 transition duration-500 animate-pulse"></div>
-                <Button variant="accent" size="lg" className="relative px-8 py-3.5 text-sm uppercase tracking-widest font-extrabold shadow-xl text-slate-900 border-none">
-                  Browse Books <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
+                <Button variant="accent" size="lg" className="pl-6 pr-5">
+                  Browse E-Books <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link to="/categories" >
@@ -263,8 +263,8 @@ export default function Home() {
                 <BookOpen className="w-5 h-5 stroke-[1.5]" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Wide Range</span>
-                <span className="text-[11px] font-medium text-slate-500">of Books</span>
+                <span className="text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">30+</span>
+                <span className="text-[11px] font-medium text-slate-500">of E-Books</span>
               </div>
             </div>
 
@@ -285,8 +285,8 @@ export default function Home() {
                 <Truck className="w-5 h-5 stroke-[1.5]" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Fast & Safe</span>
-                <span className="text-[11px] font-medium text-slate-500">Delivery</span>
+                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Instant</span>
+                <span className="text-[11px] font-medium text-slate-500">Access</span>
               </div>
             </div>
 
@@ -296,8 +296,8 @@ export default function Home() {
                 <RotateCcw className="w-5 h-5 stroke-[1.5]" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Easy Returns</span>
-                <span className="text-[11px] font-medium text-slate-500">Policy</span>
+                <span className="text-xs font-extrabold text-slate-900 tracking-wide uppercase">Multi-Device</span>
+                <span className="text-[11px] font-medium text-slate-500">Support</span>
               </div>
             </div>
 
@@ -360,10 +360,10 @@ export default function Home() {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-[15px] xl:text-[17px] font-semibold text-slate-900 mb-1.5 tracking-tight">
-                  Global Shipping
+                  Universal Compatibility
                 </h3>
                 <p className="text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed pr-1">
-                  Fast, fully tracked worldwide delivery for all physical hardcovers.
+                  Read anywhere. Fully optimized digital formats for your tablet, phone, or e-reader.
                 </p>
               </div>
             </div>
@@ -375,10 +375,10 @@ export default function Home() {
               </div>
               <div className="flex flex-col">
                 <h3 className="text-[15px] xl:text-[17px] font-semibold text-slate-900 mb-1.5 tracking-tight">
-                  Risk-Free Returns
+                  Satisfaction Guaranteed
                 </h3>
                 <p className="text-[13px] xl:text-[14.5px] text-slate-500 leading-relaxed pr-1">
-                  Not satisfied? Return any physical book within <span className="font-semibold text-orange-600">7 days</span> for a full refund.
+                  High fidelity technical playbooks reviewed by industry experts for quality assurance.
                 </p>
               </div>
             </div>
@@ -402,7 +402,7 @@ export default function Home() {
                 Master Every Attack Surface.
               </h2>
               <p className="text-lg md:text-xl text-slate-500 leading-relaxed mb-10">
-                We don't just sell books. We curate specialized playbooks for modern security teams. From low-level cryptography to advanced red-teaming, find the exact knowledge you need to stay ahead of zero-days.
+                We don't just sell e-books. We curate specialized playbooks for modern security teams. From low-level cryptography to advanced red-teaming, find the exact knowledge you need to stay ahead of zero-days.
               </p>
               <Link 
                 to="/categories" 
@@ -415,7 +415,7 @@ export default function Home() {
 
             {/* RIGHT COLUMN: PREMIUM GRID */}
             <div className="w-full lg:w-[60%] grid grid-cols-1 md:grid-cols-2 gap-5 xl:gap-6">
-              {categories.map((cat, idx) => (
+              {browseCategories.map((cat, idx) => (
                 <motion.div key={idx} variants={itemVariants}>
                   <Link 
                     to={`/books?category=${encodeURIComponent(cat.name)}`} 
@@ -490,10 +490,10 @@ export default function Home() {
             {/* View All Card */}
             <motion.div variants={itemVariants} className="w-[200px] flex-shrink-0 snap-start flex items-center justify-center p-6">
               <Link to="/books" className="group flex flex-col items-center gap-4 text-slate-400 hover:text-indigo-600 transition-colors">
-                <div className="w-20 h-20 rounded-full bg-slate-50 border-2 border-dashed border-slate-200 group-hover:border-indigo-200 group-hover:bg-indigo-50 flex items-center justify-center transition-all duration-300">
-                  <ArrowRight className="w-8 h-8 group-hover:translate-x-1 transition-transform" />
+                <div className="w-14 h-14 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-indigo-50 group-hover:border-indigo-200 transition-all">
+                  <ArrowRight className="w-6 h-6 stroke-[1.5]" />
                 </div>
-                <span className="font-bold uppercase tracking-widest text-sm">See All Books</span>
+                <span className="font-bold uppercase tracking-widest text-sm">See All E-Books</span>
               </Link>
             </motion.div>
           </motion.div>
@@ -546,7 +546,7 @@ export default function Home() {
               >
                 <img 
                   src={promoRealBooksImage} 
-                  alt="Realistic photograph of a stack of cybersecurity books" 
+                  alt="Digital tablet displaying cybersecurity dashboards" 
                   className="w-full h-full object-cover md:absolute md:inset-0"
                 />
               </div>

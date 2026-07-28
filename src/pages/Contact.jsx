@@ -200,7 +200,7 @@ export default function Contact() {
               className="mt-2 w-full sm:w-auto self-end px-8 justify-center"
               icon={isSubmitting ? null : <Send className="w-4 h-4" />}
             >
-              {isSubmitting ? 'Verifying Dispatch...' : 'Send Message'}
+              {isSubmitting ? 'Verifying Request...' : 'Send Message'}
             </Button>
 
             {/* Success message banner */}
@@ -208,7 +208,7 @@ export default function Contact() {
               <div className="flex items-center gap-3 p-4 bg-emerald-50 border border-emerald-100 rounded-xl text-emerald-800 text-xs font-medium animate-fade-in mt-4">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                 <div>
-                  Your message has been signed and dispatched successfully. A support analyst will contact you shortly.
+                  Your message has been signed and sent successfully. A support analyst will contact you shortly.
                 </div>
               </div>
             )}

@@ -84,14 +84,11 @@ const DOCS = {
     signee: "Customer Operations Desk",
     content: `We stand behind the quality of the technical books we curate. If you are not satisfied with your purchase, we support returns under the following guidelines:
 
-    1. 30-Day Evaluation Window
-    Physical textbooks may be returned within 30 days of dispatch for a full refund or replacement. Books must be in original condition, free of writing, highlighting, or page bending.
+    1. Digital Resource Code Guarantee
+    Complementary exam vouchers, online lab access codes, Kali Linux code scratchcards, or accompanying digital keys must remain unredeemed to be eligible for a refund.
 
-    2. Digital Resource Codes
-    Complementary exam vouchers, online lab access codes, Kali Linux code scratchcards, or accompanying CD-ROMs must remain unscratched and sealed to be eligible for a refund.
-
-    3. Return Shipping
-    CyberShelf provides prepaid return shipping labels for verified shipping damage or listing errors. Return shipping for general evaluations is the responsibility of the purchaser.`
+    2. Defective Files
+    If a downloaded PDF or EPUB file is verifiably defective or corrupted, we will immediately issue a replacement file or provide a full refund.`
   },
   security: {
     title: "Vulnerability Disclosure Policy",
@@ -121,7 +118,7 @@ const DOCS = {
     The CyberShelf storefront engine, styling tokens, catalog navigation scripts, and mock database models are open-source and distributed under the MIT License.
 
     2. Book Copyright Details
-    All physical books, title names, cover artwork, and diagrams are the proprietary intellectual property of their authors and publishing houses. CyberShelf operates as an authorized distributor.
+    All digital books, title names, cover artwork, and diagrams are the proprietary intellectual property of their authors and publishing houses. CyberShelf operates as an authorized distributor.
 
     3. Asset Attributions
     Vector icons are powered by Lucide React. UI design frames are curated under premium minimalist design guidelines.`
@@ -136,8 +133,8 @@ const DOCS = {
     - Home Node: /
       Primary landing portal featuring bestseller stacks, curated category selectors, testimonials, and promo highlights.
 
-    - Books Repository: /books
-      Advanced search filter engine. Query books by text matching, category filters, author selection, price parameters, and rating thresholds.
+    - E-Books Repository: /books
+      Advanced search filter engine. Query e-books by text matching, category filters, author selection, price parameters, and rating thresholds.
 
     - Categories Index: /categories
       Categorical index page mapping all 18 technical domains with description metadata.
@@ -182,6 +179,17 @@ const DOCS = {
 
     3. Managing Preferences
     You can clear your local cache or disable cookies entirely through your browser settings, though doing so will clear your shopping cart inventory.`
+  },
+  disclaimer: {
+    title: "Disclaimer & Independence",
+    icon: <AlertTriangle className="w-8 h-8 text-accent" />,
+    lastUpdated: "July 28, 2026",
+    signee: "Corporate Communications",
+    content: `CyberShelf is an independent online educational platform and bookstore powered by EAA Logistics (Company Name - EAA Logi).
+
+    We are an independent organization and are not affiliated with, endorsed by, sponsored by, or officially connected with Microsoft, McAfee, Webroot, Norton, Bitdefender, Kaspersky, Cisco, Palo Alto Networks, CrowdStrike, Cloudflare, Google, or any other third-party organization.
+    
+    All trademarks, logos, product names, and company names belong to their respective owners. Any reference to these entities is for educational and comparison purposes only.`
   }
 };
 

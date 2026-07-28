@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Star, ShieldCheck, Truck, RotateCcw, ArrowLeft, Plus, Minus, ShoppingBag } from 'lucide-react';
+import { Star, ShieldCheck, Truck, RotateCcw, ArrowLeft, Plus, Minus, ShoppingBag, Download } from 'lucide-react';
 const bookModules = import.meta.glob('../data/books/*.json', { eager: true });
 const booksData = Object.values(bookModules).map(mod => mod.default || mod);
 import { BookCover } from '../utils/svgGenerator';
@@ -47,6 +47,21 @@ export default function BookDetails() {
 
   const handleAddToCart = () => {
     addToCart(book, quantity);
+    setAddedMessage(true);
+    setTimeout(() => setAddedMessage(false), 3000);
+  };
+
+  const handleDownload = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    const content = `<!DOCTYPE html><html><head><title>${title}</title><style>body{font-family:system-ui,sans-serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.6;color:#333}h1{color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px}.meta{color:#64748b;font-size:1.1rem;margin-bottom:2rem}.watermark{padding:1rem;background:#fef3c7;color:#92400e;border-radius:0.5rem;margin-bottom:2rem;border:1px solid #fcd34d}</style></head><body><div class="watermark"><strong>Demo Version:</strong> This is a simulated e-book preview. Full copyrighted text is not included in this development environment.</div><h1>${title}</h1><div class="meta">By ${author}</div><h2>Chapter 1: Introduction</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><h2>Chapter 2: Getting Started</h2><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p></body></html>`;
+    const blob = new Blob([content], { type: 'text/html' });
+    const url = URL.createObjectURL(blob);
+    window.open(url, '_blank');
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    
     setAddedMessage(true);
     setTimeout(() => setAddedMessage(false), 3000);
   };
@@ -124,41 +139,55 @@ export default function BookDetails() {
 
           {/* Add to Cart Actions */}
           <div className="flex flex-wrap items-center gap-4 py-4 border-y border-slate-100">
-            {/* Quantity Selector */}
-            <div className="flex items-center border border-slate-200 rounded-xl bg-white">
-              <button 
-                onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
-                className="p-2.5 text-slate-500 hover:text-slate-900"
-                aria-label="Decrease quantity"
+            {price === 0 ? (
+              <Button 
+                variant="primary" 
+                size="lg" 
+                className="flex-1 sm:flex-none sm:px-12"
+                icon={<Download className="w-4.5 h-4.5" />}
+                onClick={handleDownload}
               >
-                <Minus className="w-4 h-4" />
-              </button>
-              <span className="px-4 font-bold text-sm text-slate-950 select-none w-10 text-center">
-                {quantity}
-              </span>
-              <button 
-                onClick={() => setQuantity(prev => prev + 1)}
-                className="p-2.5 text-slate-500 hover:text-slate-900"
-                aria-label="Increase quantity"
-              >
-                <Plus className="w-4 h-4" />
-              </button>
-            </div>
+                Download E-Book
+              </Button>
+            ) : (
+              <>
+                {/* Quantity Selector */}
+                <div className="flex items-center border border-slate-200 rounded-xl bg-white">
+                  <button 
+                    onClick={() => setQuantity(prev => Math.max(1, prev - 1))}
+                    className="p-2.5 text-slate-500 hover:text-slate-900"
+                    aria-label="Decrease quantity"
+                  >
+                    <Minus className="w-4 h-4" />
+                  </button>
+                  <span className="px-4 font-bold text-sm text-slate-950 select-none w-10 text-center">
+                    {quantity}
+                  </span>
+                  <button 
+                    onClick={() => setQuantity(prev => prev + 1)}
+                    className="p-2.5 text-slate-500 hover:text-slate-900"
+                    aria-label="Increase quantity"
+                  >
+                    <Plus className="w-4 h-4" />
+                  </button>
+                </div>
 
-            {/* Cart Button */}
-            <Button 
-              variant="primary" 
-              size="lg" 
-              className="flex-1 sm:flex-none sm:px-12"
-              icon={<ShoppingBag className="w-4.5 h-4.5" />}
-              onClick={handleAddToCart}
-            >
-              Add To Cart
-            </Button>
+                {/* Cart Button */}
+                <Button 
+                  variant="primary" 
+                  size="lg" 
+                  className="flex-1 sm:flex-none sm:px-12"
+                  icon={<ShoppingBag className="w-4.5 h-4.5" />}
+                  onClick={handleAddToCart}
+                >
+                  Add To Cart
+                </Button>
+              </>
+            )}
 
             {addedMessage && (
               <span className="text-xs text-emerald-600 font-semibold animate-fade-in flex items-center gap-1.5">
-                ✓ Added to cart!
+                {price === 0 ? '✓ Download Started!' : '✓ Added to cart!'}
               </span>
             )}
           </div>
@@ -178,7 +207,7 @@ export default function BookDetails() {
               <span className="text-xs font-semibold text-slate-800">{isbn}</span>
             </div>
             <div className="flex flex-col gap-0.5">
-              <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Format</span>
+              <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Length</span>
               <span className="text-xs font-semibold text-slate-800">{pages} Pages</span>
             </div>
           </div>
@@ -187,15 +216,15 @@ export default function BookDetails() {
           <div className="border border-slate-100 rounded-2xl p-4 flex flex-col sm:flex-row justify-between gap-4 text-xs text-slate-500">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-4 h-4 text-slate-400" />
-              <span>Authentic Publisher Editions</span>
+              <span>Verified Digital Editions</span>
             </div>
             <div className="flex items-center gap-2">
               <Truck className="w-4 h-4 text-slate-400" />
-              <span>Dispatch within 24 Hours</span>
+              <span>Instant Download</span>
             </div>
             <div className="flex items-center gap-2">
               <RotateCcw className="w-4 h-4 text-slate-400" />
-              <span>7-Day Hassle-Free Returns</span>
+              <span>Secure Digital Files</span>
             </div>
           </div>
         </div>
@@ -231,10 +260,10 @@ export default function BookDetails() {
           variant="primary" 
           size="md" 
           className="flex-shrink-0 px-6 shadow-lg shadow-slate-900/20"
-          icon={<ShoppingBag className="w-4 h-4" />}
-          onClick={handleAddToCart}
+          icon={price === 0 ? <Download className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />}
+          onClick={price === 0 ? handleDownload : handleAddToCart}
         >
-          Add To Cart
+          {price === 0 ? 'Download' : 'Add To Cart'}
         </Button>
       </div>
     </div>

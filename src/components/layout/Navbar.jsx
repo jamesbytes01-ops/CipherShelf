@@ -39,8 +39,8 @@ export function Navbar() {
   };
 
   const navLinks = [
-    { to: '/books', label: 'Books' },
-    { to: '/categories', label: 'Categories' }
+    { to: '/books', label: 'E-Books' },
+    { to: '/categories', label: 'Topics' },
   ];
 
   const resources = [
@@ -122,7 +122,7 @@ export function Navbar() {
           <form onSubmit={handleSearchSubmit} className="relative">
             <input
               type="text"
-              placeholder="Search catalog..."
+              placeholder="Search premium e-books..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-48 xl:w-56 bg-white/5 border border-white/10 text-xs text-white rounded-xl pl-9 pr-3 py-2 outline-none focus:bg-white/10 focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all duration-200 placeholder:text-slate-500"

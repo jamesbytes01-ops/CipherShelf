@@ -78,6 +78,9 @@ export function Footer() {
               <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
             </li>
             <li>
+              <Link to="/legal/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
+            </li>
+            <li>
               <Link to="/legal/careers" className="hover:text-white transition-colors">Careers</Link>
             </li>
             <li>
@@ -97,6 +100,11 @@ export function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/antivirus-education" className="hover:text-accent font-semibold transition-colors">
+                Antivirus Security
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -183,7 +191,8 @@ export function Footer() {
 
           {/* Disclaimer */}
           <div className="text-xs text-slate-400 text-center max-w-4xl mx-auto leading-relaxed">
-            CyberShelf is an independent online bookstore and educational platform. We are not affiliated with, endorsed by, sponsored by, or officially connected with Microsoft, McAfee, Webroot, Norton, Bitdefender, Kaspersky, Cisco, Palo Alto Networks, CrowdStrike, Cloudflare, Google, or any other third-party organization. All trademarks, logos, product names, and company names belong to their respective owners.
+            <span className="font-bold text-slate-300">Company Name - EAA Logi | Powered by EAA Logistics</span><br/><br/>
+            CyberShelf is an independent online educational platform and bookstore. We are an independent organization, not affiliated with, endorsed by, sponsored by, or officially connected with Microsoft, McAfee, Webroot, Norton, Bitdefender, Kaspersky, Cisco, or any other third-party organization. All trademarks, logos, product names, and company names belong to their respective owners.
           </div>
         </div>
       </div>

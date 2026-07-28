@@ -8,16 +8,16 @@ const FAQS = [
     category: "Orders & Shipping",
     items: [
       {
-        q: "Do you ship physical books internationally?",
-        a: "Yes, we ship globally via secure, tracked couriers. Shipping costs and delivery times are calculated at checkout based on your node location."
+        q: "What formats do your e-books come in?",
+        a: "All our books are provided in high-quality PDF and EPUB formats, ensuring compatibility across all your devices including e-readers, tablets, and desktops."
       },
       {
         q: "When will I receive my digital purchase?",
         a: "Immediately. All DRM-free EPUBs and PDF manuals are instantly unlocked and available for download in your dashboard the moment your transaction clears."
       },
       {
-        q: "What is your return policy?",
-        a: "We offer a 30-day evaluation window for physical books, provided they are in original condition. Digital goods are non-refundable once downloaded, unless there is a verifiable defect in the file."
+        q: "What is your refund policy for digital goods?",
+        a: "Due to the nature of DRM-free digital goods, all sales are considered final once downloaded. However, if there is a verifiable defect in the file, we will provide a replacement or a full refund."
       }
     ]
   },

@@ -55,7 +55,7 @@ export function CategoryCard({ name, count = 0 }) {
       {/* Meta Footer */}
       <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between text-xs text-slate-400 font-bold uppercase tracking-wider relative z-10">
         <span className="bg-slate-100/80 border border-slate-200 text-slate-600 rounded-full px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest group-hover:bg-slate-200/80 transition-colors">
-          {count} {count === 1 ? 'Book' : 'Books'}
+          {count} {count === 1 ? 'E-Book' : 'E-Books'}
         </span>
         <span className="flex items-center gap-1.5 text-slate-400 group-hover:text-slate-900 transition-colors">
           Explore <Icons.ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1.5" />

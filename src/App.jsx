@@ -17,6 +17,7 @@ const SignIn = lazy(() => import('./pages/SignIn'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogArticle = lazy(() => import('./pages/BlogArticle'));
 const FAQ = lazy(() => import('./pages/FAQ'));
+const AntivirusEducation = lazy(() => import('./pages/AntivirusEducation'));
 
 // Admin Pages removed in favor of Decap CMS
 
@@ -69,6 +70,7 @@ export default function App() {
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/blog/:slug" element={<BlogArticle />} />
                   <Route path="/resources/faq" element={<FAQ />} />
+                  <Route path="/antivirus-education" element={<AntivirusEducation />} />
                   <Route path="*" element={
                     <div className="max-w-7xl mx-auto px-6 py-24 text-center">
                       <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight">404 - Not Found</h1>
