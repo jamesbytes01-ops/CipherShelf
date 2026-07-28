@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Star, ShieldCheck, Truck, RotateCcw, ArrowLeft, Plus, Minus, ShoppingBag, Download } from 'lucide-react';
+import { Star, ShieldCheck, Truck, RotateCcw, ArrowLeft, Plus, Minus, ShoppingBag, Download, Zap } from 'lucide-react';
 const bookModules = import.meta.glob('../data/books/*.json', { eager: true });
 const booksData = Object.values(bookModules).map(mod => mod.default || mod);
 import { BookCover } from '../utils/svgGenerator';
 import { BookCard } from '../components/cards/BookCard';
+import { generateEbookHtml } from '../utils/ebookGenerator';
 import { Button } from '../components/ui/Button';
 import { useCart } from '../context/CartContext';
 
@@ -56,7 +57,7 @@ export default function BookDetails() {
       e.preventDefault();
       e.stopPropagation();
     }
-    const content = `<!DOCTYPE html><html><head><title>${title}</title><style>body{font-family:system-ui,sans-serif;max-width:800px;margin:40px auto;padding:0 20px;line-height:1.6;color:#333}h1{color:#0f172a;border-bottom:2px solid #e2e8f0;padding-bottom:10px}.meta{color:#64748b;font-size:1.1rem;margin-bottom:2rem}.watermark{padding:1rem;background:#fef3c7;color:#92400e;border-radius:0.5rem;margin-bottom:2rem;border:1px solid #fcd34d}</style></head><body><div class="watermark"><strong>Demo Version:</strong> This is a simulated e-book preview. Full copyrighted text is not included in this development environment.</div><h1>${title}</h1><div class="meta">By ${author}</div><h2>Chapter 1: Introduction</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><h2>Chapter 2: Getting Started</h2><p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p></body></html>`;
+    const content = generateEbookHtml(book);
     const blob = new Blob([content], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     window.open(url, '_blank');
@@ -174,13 +175,27 @@ export default function BookDetails() {
 
                 {/* Cart Button */}
                 <Button 
-                  variant="primary" 
+                  variant="outline" 
                   size="lg" 
-                  className="flex-1 sm:flex-none sm:px-12"
-                  icon={<ShoppingBag className="w-4.5 h-4.5" />}
+                  className="flex-1 sm:flex-none sm:px-6 border-slate-200 hover:bg-slate-50"
+                  icon={<ShoppingBag className="w-4.5 h-4.5 text-slate-500" />}
                   onClick={handleAddToCart}
                 >
-                  Add To Cart
+                  <span className="text-slate-700">Add To Cart</span>
+                </Button>
+                
+                {/* Buy Now Button */}
+                <Button 
+                  variant="accent" 
+                  size="lg" 
+                  className="flex-1 sm:flex-none sm:px-8 shadow-lg shadow-accent/20 hover:shadow-xl hover:shadow-accent/30"
+                  icon={<Zap className="w-4.5 h-4.5" />}
+                  onClick={() => {
+                    addToCart(book, quantity);
+                    navigate('/cart');
+                  }}
+                >
+                  Buy Now
                 </Button>
               </>
             )}
@@ -261,9 +276,12 @@ export default function BookDetails() {
           size="md" 
           className="flex-shrink-0 px-6 shadow-lg shadow-slate-900/20"
           icon={price === 0 ? <Download className="w-4 h-4" /> : <ShoppingBag className="w-4 h-4" />}
-          onClick={price === 0 ? handleDownload : handleAddToCart}
+          onClick={price === 0 ? handleDownload : () => {
+            addToCart(book, quantity);
+            navigate('/cart');
+          }}
         >
-          {price === 0 ? 'Download' : 'Add To Cart'}
+          {price === 0 ? 'Download' : 'Buy Now'}
         </Button>
       </div>
     </div>
