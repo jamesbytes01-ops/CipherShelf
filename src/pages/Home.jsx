@@ -13,7 +13,7 @@ import { Button } from '../components/ui/Button';
 import { HeroIllustration } from '../components/layout/HeroIllustration';
 import { BookCover } from '../utils/svgGenerator';
 import heroDarkBg from '../assets/hero-bookshelf-even.png';
-const promoRealBooksImage = "https://images.unsplash.com/photo-1544396821-4dd40b938ad3?auto=format&fit=crop&q=80&w=1000";
+import promoEbookImage from '../assets/promo-real-books.png';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -545,7 +545,7 @@ export default function Home() {
                 }}
               >
                 <img 
-                  src={promoRealBooksImage} 
+                  src={promoEbookImage} 
                   alt="Digital tablet displaying cybersecurity dashboards" 
                   className="w-full h-full object-cover md:absolute md:inset-0"
                 />
